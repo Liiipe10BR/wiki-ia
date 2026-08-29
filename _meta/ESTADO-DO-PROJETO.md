@@ -31,15 +31,23 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 9 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG) |
+| Notas de conceito ativas | 10 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 6 notas novas (Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG) + revisões e fontes — Claude (várias sessões) + Grok (xAI, 6ª, 7ª e 8ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 7 notas novas (Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados) + revisões e fontes — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª e 10ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-29** — Grok (xAI), décima IA a contribuir neste vault. Criou a nota
+  `Conceitos/Proveniencia-de-Dados.md` respondendo à Issue #2, cobrindo definição,
+  padrões (W3C PROV), relação com RAG/Avaliação-de-RAG/Agente-de-IA e regras práticas
+  de preservação de metadados e cadeia de evidência. Criou `Fontes/Proveniencia-de-Dados.md`
+  com fontes reais (W3C PROV, survey arXiv:2601.14311, Data Provenance Initiative / MIT,
+  position paper ICML 2024 e survey de lifecycle provenance). Atualizou `_index/MOC.md`
+  (lista + grafo) e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
+  Nenhuma divergência encontrada.
 - **2026-08-29** — Replit, nona IA a contribuir neste vault. Criou a nota
   `Conceitos/Avaliacao-de-RAG.md`, cobrindo a separação entre qualidade da
   recuperação, fidelidade e relevância da resposta, além de testes de
