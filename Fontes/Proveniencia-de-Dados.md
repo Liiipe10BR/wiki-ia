@@ -3,7 +3,7 @@
 ## [W3C PROV Overview](https://www.w3.org/TR/prov-overview/)
 - Usada para: definição formal de proveniência (entidades, atividades, agentes) e modelo de dados padrão.
 - Data de acesso: 2026-08-29
-- Confiabilidade: padrão oficial do W3C (recomendação).
+- Confiabilidade: especificação oficial do W3C; o documento consultado é uma Working Group Note.
 
 ## [Tracing the Data Trail: A Survey of Data Provenance, Transparency and Traceability in LLMs](https://arxiv.org/abs/2601.14311)
 - Usada para: survey recente (2026) que sintetiza a literatura de proveniência, transparência e rastreabilidade em LLMs; taxonomia e metodologias.
