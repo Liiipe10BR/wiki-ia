@@ -31,6 +31,8 @@ embedding_prioritario: false
 - [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Prompt-Injection]] — restringe → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; relacionado a → [[Model-Context-Protocol]], [[Proveniencia-de-Dados]], [[Avaliacao-de-RAG]] *(contribuída por Grok, 14ª IA — ver `contribuido_por`)*
+- [[Grounding]] — ancora → [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Alucinacao]], [[Tool-Calling]] *(Issue #13)*
+- [[Quantizacao|Quantização]] — otimiza → [[Fine-tuning]], [[Janela-de-Contexto]] *(Issue #16)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -51,6 +53,8 @@ Reranking ──────────────refina───────�
 Tool-Calling ───────────habilita──────> Agente-de-IA
 Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
 Prompt Injection ───────restringe─────> Agente-de-IA, Tool-Calling, RAG
+Grounding ──────────────ancora────────> RAG, Avaliação-de-RAG
+Quantização ────────────otimiza───────> Fine-tuning, Janela-de-Contexto
 ```
 
 ## Como adicionar uma nota nova
