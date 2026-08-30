@@ -38,7 +38,7 @@ Em sistemas de [[RAG]], a expectativa é que o grounding em documentos externos
 reduza alucinações extrínsecas. Na prática, isso só funciona se a recuperação
 for boa ([[Hybrid-Search]], [[Reranking]]), se o modelo for instruído a se ater
 à evidência, e se houver [[Avaliacao-de-RAG]] de fidelidade. [[Proveniencia-de-Dados]]
-ajuda a auditar de onde veio cada afirmação.
+ajuda a auditar de onde veio cada afirmação. Ver também [[Grounding]].
 
 Mitigações comuns incluem: grounding com RAG, citação obrigatória de fontes,
 recusa quando a evidência é insuficiente, verificação com modelos juízes,
@@ -59,6 +59,7 @@ relations:
   - related_to: "[[Agente-de-IA]] (ações baseadas em fatos inventados propagam erro)"
   - related_to: "[[Janela-de-Contexto]] (contexto longo mal utilizado também induz inconsistência)"
   - related_to: "[[Tool-Calling]] (ferramentas externas podem ancorar fatos; APIs alucinadas são outro risco)"
+  - related_to: "[[Grounding]] (atribuição a fontes identificadas é o regime que a alucinação viola)"
 rules_of_thumb:
   - "Regra 1: Trate afirmações sem evidência rastreável como de baixa confiança; peça fonte ou marque incerteza."
   - "Regra 2: Em pipelines RAG, separe falha de recuperação (documento errado) de falha de fidelidade (modelo ignora o documento)."
@@ -77,6 +78,7 @@ rules_of_thumb:
 - [[Agente-de-IA]]
 - [[Janela-de-Contexto]]
 - [[Tool-Calling]]
+- [[Grounding]]
 - [[Fine-tuning]]
 
 ## 📚 4. Fontes

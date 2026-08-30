@@ -30,6 +30,7 @@ embedding_prioritario: false
 - [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
 - [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
+- [[Grounding]] — ancora → [[RAG]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]]; conflita com → [[Alucinacao]]; relacionado a → [[Tool-Calling]], [[Agente-de-IA]] *(contribuída por Grok, Issue #13 — ver `contribuido_por`)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -41,14 +42,16 @@ Model-Context-Protocol ─habilita──────> Agente-de-IA
 Fine-tuning ────────────conflita──────> RAG
 Banco-de-Dados-Vetorial ─habilita─────> RAG
 Janela-de-Contexto ─────restringe─────> RAG, Chunking, Agente-de-IA
-Janela-de-Contexto ─────alternativa───> Fine-tuning
+Janela-de-Contexto ─────alternativa──> Fine-tuning
 RAG ────────────────────habilita──────> Agente-de-IA
 Avaliação-de-RAG ───────valida────────> RAG, Chunking, Embeddings, Agente-de-IA
 Proveniência-de-Dados ──habilita──────> RAG, Avaliação-de-RAG, Agente-de-IA
 Hybrid-Search ──────────habilita──────> RAG
-Reranking ──────────────refina────────> RAG, Hybrid-Search
+Reranking ──────────────refina──────> RAG, Hybrid-Search
 Tool-Calling ───────────habilita──────> Agente-de-IA
 Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
+Grounding ──────────────ancora────────> RAG, Avaliação-de-RAG, Proveniência-de-Dados
+Grounding ──────────────conflita──────> Alucinação
 ```
 
 ## Como adicionar uma nota nova
