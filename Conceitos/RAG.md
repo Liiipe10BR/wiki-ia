@@ -5,7 +5,7 @@ tags:
   - status/verificado
 aliases: ["RAG", "Retrieval Augmented Generation", "Geração Aumentada por Recuperação"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-28
+ultima_verificacao: 2026-08-30
 confianca: 0.95
 embedding_prioritario: true
 contribuido_por: "Claude (Anthropic, Sonnet 5) — quarta IA a contribuir neste vault; confirmou o fato já registrado (paper de origem) contra a fonte primária e criou Fontes/RAG.md correspondente"
@@ -35,6 +35,8 @@ responder com fatos verificados em vez de "chutar" pela memória do modelo.
   o modelo pode gerar uma resposta confiante e errada mesmo assim.
 - Qualidade do RAG depende mais da qualidade da indexação/chunking do que do
   modelo em si, na prática.
+- Trechos recuperados também são canal de [[Prompt-Injection]] indireta: um
+  documento indexado pode trazer instruções além de fatos.
 
 ---
 
@@ -47,6 +49,7 @@ relations:
   - depends_on: "[[Embeddings]]"
   - depends_on: "Banco de dados vetorial"
   - conflicts_with: "Fine-tuning puro (quando a meta é conhecimento factual atualizável)"
+  - related_to: "[[Prompt-Injection]] (chunk recuperado pode conter instrução maliciosa)"
 rules_of_thumb:
   - "Regra 1: Prefira RAG a fine-tuning quando o conhecimento muda com frequência."
   - "Regra 2: Chunking ruim (pedaços de texto mal cortados) é a causa mais comum de RAG que 'não acha' a resposta certa."
@@ -58,6 +61,7 @@ rules_of_thumb:
 ## 🔗 3. Notas Relacionadas
 - [[Embeddings]]
 - [[Model-Context-Protocol]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/RAG.md`. Paper original: Lewis et al. 2020, "Retrieval-Augmented

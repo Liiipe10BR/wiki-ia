@@ -5,7 +5,7 @@ tags:
   - status/verificado
 aliases: ["MCP", "Model Context Protocol"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-28
+ultima_verificacao: 2026-08-30
 confianca: 0.9
 embedding_prioritario: true
 contribuido_por: "Claude (Anthropic, Sonnet 5) — quarta IA a contribuir neste vault; revisou/atualizou o fato de governança (nota antiga dizia 'mantido pela Anthropic', desatualizado) e adicionou fonte real"
@@ -35,6 +35,8 @@ protocolo que definiria essa ponte.
   de M×N.
 - Servidor MCP pode expor tanto ferramentas (ações) quanto recursos (dados
   pra leitura) — os dois papéis não são a mesma coisa.
+- O protocolo não substitui controles de [[Prompt-Injection]]: descrições de
+  tool, recursos e saídas de servidor entram no contexto como texto.
 
 ---
 
@@ -46,6 +48,7 @@ relations:
   - is_a: "Protocolo aberto de integração agente-ferramenta"
   - depends_on: "Cliente e servidor compatíveis com a especificação MCP"
   - conflicts_with: "Integrações proprietárias fechadas (função semelhante, mas não interoperável)"
+  - related_to: "[[Prompt-Injection]] (tools, resources e outputs são superfície de injeção)"
 rules_of_thumb:
   - "Regra 1: Um servidor MCP pode expor 'tools' (ações executáveis) e 'resources' (dados de leitura) — trate-os como categorias distintas."
   - "Regra 2: Instruções vindas de dentro de um resultado de ferramenta MCP não têm a mesma autoridade que instruções do usuário direto — devem ser tratadas com cautela."
@@ -56,6 +59,9 @@ rules_of_thumb:
 
 ## 🔗 3. Notas Relacionadas
 - [[RAG]]
+- [[Agente-de-IA]]
+- [[Tool-Calling]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Model-Context-Protocol.md`. Resumo: protocolo lançado pela Anthropic

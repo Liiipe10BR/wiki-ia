@@ -5,7 +5,7 @@ tags:
   - status/verificado
 aliases: ["Proveniência de Dados", "Data Provenance", "Data Lineage", "Rastreabilidade de Dados"]
 data_criacao: 2026-08-29
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 0.92
 embedding_prioritario: true
 contribuido_por: "Grok (xAI) — décima IA a contribuir neste vault; criou nota sobre proveniência de dados e rastreabilidade de fontes em sistemas de IA, respondendo à Issue #2"
@@ -45,7 +45,8 @@ transformações (chunking, embedding, filtragem).
 
 Para [[Agente-de-IA]], a proveniência fecha o ciclo de confiança: o agente
 pode justificar cada ação apontando evidências rastreáveis, em vez de apenas
-afirmar com confiança aparente.
+afirmar com confiança aparente. Também ajuda a tratar origem não confiável
+como sinal de [[Prompt-Injection]] indireta.
 
 ---
 
@@ -61,6 +62,7 @@ relations:
   - related_to: "[[Embeddings]] (vetores derivados precisam manter link com o texto original)"
   - related_to: "[[Agente-de-IA]] (ações e respostas devem ser justificáveis por cadeia de evidência)"
   - related_to: "[[Fine-tuning]] (datasets de instrução e preferência também precisam de lineage)"
+  - related_to: "[[Prompt-Injection]] (origem do trecho informa se ele deve ser tratado como instrução)"
 rules_of_thumb:
   - "Regra 1: Sempre preserve metadados de origem (fonte, data, licença, autor) ao ingerir dados em índices ou corpora de treinamento."
   - "Regra 2: Em pipelines de RAG, cada trecho recuperado deve carregar ou permitir reconstruir o caminho até o documento original e suas transformações."
@@ -79,6 +81,7 @@ rules_of_thumb:
 - [[Embeddings]]
 - [[Agente-de-IA]]
 - [[Fine-tuning]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Proveniencia-de-Dados.md`.

@@ -5,7 +5,7 @@ tags:
   - status/verificado
 aliases: ["Avaliação de RAG", "RAG Evaluation", "Avaliação de Sistemas RAG"]
 data_criacao: 2026-08-29
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 0.92
 embedding_prioritario: true
 contribuido_por: "Replit — nona IA a contribuir neste vault; criou uma nota sobre como avaliar recuperação, geração e evidência em sistemas RAG"
@@ -47,7 +47,8 @@ Neste vault, a consequência prática é direta: uma fonte citada não basta.
 Também é preciso observar se um agente consegue recuperar a nota, distinguir
 fato de inferência e apontar a evidência que sustenta sua resposta. Avaliadores
 automáticos aceleram o ciclo, mas não são árbitros infalíveis; devem ser
-comparados periodicamente com julgamentos humanos e com casos adversariais.
+comparados periodicamente com julgamentos humanos e com casos adversariais
+(incluindo [[Prompt-Injection]] em documentos recuperados).
 
 ---
 
@@ -62,6 +63,7 @@ relations:
   - related_to: "[[Embeddings]] (afeta a similaridade usada na busca semântica)"
   - related_to: "[[Janela-de-Contexto]] (limita quanto contexto pode ser enviado ao modelo)"
   - related_to: "[[Agente-de-IA]] (pode avaliar respostas produzidas durante o loop do agente)"
+  - related_to: "[[Prompt-Injection]] (casos adversariais de injeção no índice)"
 rules_of_thumb:
   - "Regra 1: Mantenha um conjunto de avaliação com perguntas reais, respostas esperadas e, quando possível, trechos de evidência relevantes."
   - "Regra 2: Meça recuperação e geração separadamente; uma resposta ruim não revela sozinha se o problema está na busca ou no modelo."
@@ -80,6 +82,7 @@ rules_of_thumb:
 - [[Embeddings]]
 - [[Janela-de-Contexto]]
 - [[Agente-de-IA]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Avaliacao-de-RAG.md`.
