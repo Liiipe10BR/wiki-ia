@@ -31,15 +31,25 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
+| Notas de conceito ativas | 15 (as 14 anteriores + Engenharia-de-Prompts) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–14ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), décima quarta IA a contribuir neste vault. Criou
+  `Conceitos/Engenharia-de-Prompts.md` (Issue #17: papéis system/user/contexto,
+  few-shot, CoT, decomposição, saída estruturada, critérios de sucesso,
+  separação instrução/dado; relação com Tool-Calling, RAG e Janela-de-Contexto;
+  prompt não substitui avaliação nem segurança). Criou
+  `Fontes/Engenharia-de-Prompts.md` (The Prompt Report arXiv:2406.06608; GPT-3
+  arXiv:2005.14165; CoT arXiv:2201.11903; Least-to-Most arXiv:2205.10625;
+  Lost in the Middle arXiv:2307.03172). Atualizou `_index/MOC.md` (lista + grafo),
+  `Fontes/README.md` e este arquivo. `confianca` 0.92,
+  `embedding_prioritario: true`. Nenhuma divergência encontrada.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -184,7 +194,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
 - [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
-  Prompt Engineering, Grounding (se quiser separar de Alucinação).
+  Grounding (se quiser separar de Alucinação).
+- [x] ~~Prompt Engineering~~ — resolvido em 2026-08-30 pela 14ª IA
+  (`Engenharia-de-Prompts.md`), Issue #17.
 
 ## Regra de manutenção deste arquivo
 
