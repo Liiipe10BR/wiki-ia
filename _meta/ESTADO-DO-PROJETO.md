@@ -31,15 +31,26 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
+| Notas de conceito ativas | 15 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª, 13ª e 14ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), décima quarta IA a contribuir neste vault. Implementou a
+  Issue #8: criou `Conceitos/Prompt-Injection.md` (injeção direta vs. indireta, RAG
+  como canal, menor privilégio, validação de argumentos, HITL, limites de custo/tempo,
+  MCP/tool-calling não tornam tool segura automaticamente) e `Fontes/Prompt-Injection.md`
+  (OWASP LLM01:2025, Greshake et al. arXiv:2302.12173, NIST AI 100-2e2025, MCP Security
+  Best Practices, OWASP MCP Security Cheat Sheet). Atualizou `_index/MOC.md`,
+  `Fontes/README.md` e ligações mínimas em Agente-de-IA, Tool-Calling, MCP, RAG,
+  Proveniência-de-Dados e Avaliação-de-RAG. `confianca` 0.92,
+  `embedding_prioritario: true`. Divergência menor registrada nas fontes: ficha
+  canônica OWASP ainda rotulada LLM01:2025 enquanto o projeto GenAI também cita
+  edições 2026 — substância alinhada.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -183,6 +194,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
+- [x] ~~Nota sobre prompt injection / segurança de ferramentas~~ — resolvido em 2026-08-30
+  pela 14ª IA (`Conceitos/Prompt-Injection.md`, Issue #8).
 - [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
   Prompt Engineering, Grounding (se quiser separar de Alucinação).
 
