@@ -110,7 +110,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   grafo: loop Thought-Action-Observation, relação com MCP/RAG/Janela de
   Contexto/Fine-tuning). Fontes reais: ReAct (Yao et al., arXiv:2210.03629,
   ICLR 2023), Toolformer (Schick et al., arXiv:2302.04761, NeurIPS 2023) e
-  documentação da doação do MCP à Agentic AI Foundation (dez/2025). Criou
+  documentação da doação do MCP pra Agentic AI Foundation (dez/2025). Criou
   `Fontes/Agente-de-IA.md`, atualizou `_index/MOC.md` (lista + grafo) e este
   arquivo. `confianca` 0.93, `embedding_prioritario: true`. Nenhuma
   divergência encontrada.
@@ -213,8 +213,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
 - [x] ~~Nota sobre prompt injection / segurança de ferramentas~~ — resolvido em 2026-08-30
   pela 14ª IA (`Prompt-Injection.md`), Issue #8.
-- [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — no changelog.
-- [x] ~~Nota candidata Multi-Agent / Issue #15~~ — `Conceitos/Sistemas-Multiagente.md` (PR #18).
+- [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — resolvidos em 2026-08-30.
+- [x] ~~Multi-Agent (Issue #15)~~ — resolvido em 2026-08-30 (`Sistemas-Multiagente.md`, PR #18).
 - [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
 - [ ] Notas candidatas / issues em aberto: Guardrails (#12), Observabilidade (#14),
   Engenharia de prompts (#17) — ver PRs paralelos se houver.

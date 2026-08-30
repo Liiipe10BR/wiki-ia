@@ -33,7 +33,7 @@ embedding_prioritario: false
 - [[Prompt-Injection]] — restringe → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; relacionado a → [[Model-Context-Protocol]], [[Proveniencia-de-Dados]], [[Avaliacao-de-RAG]] *(contribuída por Grok, 14ª IA — ver `contribuido_por`)*
 - [[Grounding]] — ancora → [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Alucinacao]], [[Tool-Calling]] *(Issue #13)*
 - [[Quantizacao|Quantização]] — otimiza → [[Fine-tuning]], [[Janela-de-Contexto]] *(Issue #16)*
-- [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15 — Grok)*
+- [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15, PR #18)*
 
 ## Grafo de dependências (visão rápida)
 
