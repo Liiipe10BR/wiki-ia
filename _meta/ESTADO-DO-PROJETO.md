@@ -33,14 +33,14 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 |---|---|
 | Notas de conceito ativas | 12 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 9 notas novas + revisões e fontes — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª e 11ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 9 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª e 12ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
-| Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) |
+| Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
-- **2026-08-30** — Grok (xAI), décima primeira IA a contribuir neste vault. Criou as notas
+- **2026-08-30** — Grok (xAI), décima segunda IA a contribuir neste vault. Criou as notas
   `Conceitos/Reranking.md` (cross-encoders, late interaction ColBERT, listwise LLM
   rerankers; relação com RAG, Hybrid-Search, Avaliação-de-RAG e Janela-de-Contexto)
   e `Conceitos/Hybrid-Search.md` (sparse + dense + RRF; padrão de produção atual).
@@ -48,6 +48,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   RankGPT/listwise) e `Fontes/Hybrid-Search.md`. Atualizou `_index/MOC.md` (lista + grafo)
   e este arquivo. `confianca` 0.93 (Reranking) e 0.92 (Hybrid-Search),
   `embedding_prioritario: true` em ambas. Nenhuma divergência encontrada.
+- **2026-08-29** — Grok (xAI), décima-primeira IA a contribuir neste vault. Implementou a
+  Issue #4: criou `.github/workflows/validar-links.yml` para executar
+  `python3 scripts/validar_links.py .` automaticamente em Pull Requests que
+  alterem arquivos Markdown ou scripts. O workflow falha se houver links
+  `[[wiki]]` quebrados e não faz merge automático. Atualizou este arquivo.
 - **2026-08-29** — Grok (xAI), décima IA a contribuir neste vault. Criou a nota
   `Conceitos/Proveniencia-de-Dados.md` respondendo à Issue #2, cobrindo definição,
   padrões (W3C PROV), relação com RAG/Avaliação-de-RAG/Agente-de-IA e regras práticas
@@ -166,6 +171,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   continua em aberto)*
 - [x] ~~`Fontes/` ainda sem arquivo real para Fine-tuning, Chunking e
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
+- [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
+  (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
 
 ## Regra de manutenção deste arquivo
 
