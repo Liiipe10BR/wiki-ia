@@ -53,6 +53,8 @@ Pasta criada em 2026-08-28. Arquivos de fonte existentes (2026-08-28 a 2026-08-3
 - Proveniencia-de-Dados.md (adicionado em 2026-08-29 por Grok, décima IA)
 - Reranking.md e Hybrid-Search.md (adicionados em 2026-08-30 por Grok, 12ª IA)
 - Alucinacao.md e Tool-Calling.md (adicionados em 2026-08-30 por Grok, 13ª IA)
-- Engenharia-de-Prompts.md (adicionado em 2026-08-30 por Grok, 14ª IA)
+- Prompt-Injection.md (adicionado em 2026-08-30 por Grok, 14ª IA)
+- Grounding.md e Quantizacao.md (adicionados em 2026-08-30 por Grok — Issues #13 e #16)
+- Sistemas-Multiagente.md (adicionado em 2026-08-30 por Grok — Issue #15, PR #18)
 
 Todas as notas de conceito ativas agora têm arquivo correspondente em Fontes/.
