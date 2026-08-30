@@ -31,15 +31,16 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
+| Notas de conceito ativas | 15 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Sistemas-Multiagente) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições + Issue #15 Sistemas-Multiagente) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #15. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. `confianca` 0.92, `embedding_prioritario: true`. Nenhuma divergência encontrada. PRs paralelos da Issue #8 (Prompt-Injection) não foram tocados.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -172,7 +173,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30,
-  e Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA).
+  Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA, e
+  Sistemas-Multiagente adicionado em 2026-08-30 na Issue #15).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -183,8 +185,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
-- [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
-  Prompt Engineering, Grounding (se quiser separar de Alucinação).
+- [x] ~~Nota candidata Multi-Agent~~ — resolvido em 2026-08-30 (Issue #15,
+  `Conceitos/Sistemas-Multiagente.md`).
+- [ ] Notas candidatas ainda ausentes: Guardrails, Quantização,
+  Prompt Engineering, Grounding (se quiser separar de Alucinação). Prompt Injection
+  tem PRs paralelos (#9, #10, #11) sem merge — não duplicar.
 
 ## Regra de manutenção deste arquivo
 
