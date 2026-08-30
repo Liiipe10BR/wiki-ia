@@ -30,7 +30,10 @@ embedding_prioritario: false
 - [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
 - [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
-- [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(contribuída por Grok — Issue #14)*
+- [[Prompt-Injection]] — restringe → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; relacionado a → [[Model-Context-Protocol]], [[Proveniencia-de-Dados]], [[Avaliacao-de-RAG]] *(contribuída por Grok, 14ª IA — ver `contribuido_por`)*
+- [[Grounding]] — ancora → [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Alucinacao]], [[Tool-Calling]] *(Issue #13)*
+- [[Quantizacao|Quantização]] — otimiza → [[Fine-tuning]], [[Janela-de-Contexto]] *(Issue #16)*
+- [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15, PR #18)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -43,14 +46,17 @@ Fine-tuning ────────────conflita──────> RAG
 Banco-de-Dados-Vetorial ─habilita─────> RAG
 Janela-de-Contexto ─────restringe─────> RAG, Chunking, Agente-de-IA
 Janela-de-Contexto ─────alternativa───> Fine-tuning
-RAG ──────────────────habilita──────> Agente-de-IA
+RAG ────────────────────habilita──────> Agente-de-IA
 Avaliação-de-RAG ───────valida────────> RAG, Chunking, Embeddings, Agente-de-IA
 Proveniência-de-Dados ──habilita──────> RAG, Avaliação-de-RAG, Agente-de-IA
 Hybrid-Search ──────────habilita──────> RAG
 Reranking ──────────────refina────────> RAG, Hybrid-Search
 Tool-Calling ───────────habilita──────> Agente-de-IA
 Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
-Observabilidade-de-IA ─observa──────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
+Prompt Injection ───────restringe─────> Agente-de-IA, Tool-Calling, RAG
+Grounding ──────────────ancora────────> RAG, Avaliação-de-RAG
+Quantização ────────────otimiza───────> Fine-tuning, Janela-de-Contexto
+Sistemas-Multiagente ───depende───────> Agente-de-IA, Tool-Calling, Janela-de-Contexto
 ```
 
 ## Como adicionar uma nota nova
