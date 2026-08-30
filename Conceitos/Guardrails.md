@@ -8,7 +8,7 @@ data_criacao: 2026-08-30
 ultima_verificacao: 2026-08-30
 confianca: 0.92
 embedding_prioritario: true
-contribuido_por: "Grok (xAI) — décima quarta IA a contribuir neste vault; nota sobre guardrails e políticas de segurança em sistemas e agentes de IA"
+contribuido_por: "Grok (xAI) — Issue #12 / PR #19; nota sobre guardrails e políticas de segurança em sistemas e agentes de IA"
 ---
 
 # 🛡️ Guardrails e políticas de segurança
@@ -59,8 +59,8 @@ Guardrails ligam-se a [[Alucinacao]] (filtrar afirmações sem evidência não �
 mesmo que groundedness), a [[Tool-Calling]] (validar argumentos no runtime),
 a [[Agente-de-IA]] (limitar iterações e autonomia) e a
 [[Model-Context-Protocol]] (o protocolo não torna a tool segura sozinho).
-Prompt injection é o ataque que mais pressiona esses controles; a nota
-dedicada ainda não está em `main` (PRs paralelos da Issue #8).
+[[Prompt-Injection]] é o ataque que mais pressiona esses controles (direto e
+indireto via RAG/documentos).
 
 Limitações conhecidas: classificadores de conteúdo têm falsos positivos e
 negativos; jailbreaks e injeção indireta (documento, página, e-mail) passam
@@ -84,6 +84,7 @@ relations:
   - related_to: "[[Alucinacao]]"
   - related_to: "[[RAG]]"
   - related_to: "[[Avaliacao-de-RAG]]"
+  - related_to: "[[Prompt-Injection]]"
 rules_of_thumb:
   - "Regra 1: Trate saída do modelo como entrada não confiável (OWASP improper output handling): valide, escape e autorize no runtime antes de qualquer sink (SQL, shell, e-mail, pagamento)."
   - "Regra 2: Separe filtro de conteúdo (ódio, PII, jailbreak) de política de ação (quais tools, com quais argumentos, com qual identidade). Um classificador não substitui allowlist nem menor privilégio."
@@ -104,6 +105,7 @@ rules_of_thumb:
 - [[RAG]]
 - [[Avaliacao-de-RAG]]
 - [[Proveniencia-de-Dados]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Guardrails.md`.
