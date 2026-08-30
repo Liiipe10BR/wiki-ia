@@ -36,6 +36,7 @@ embedding_prioritario: false
 - [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15, PR #18)*
 - [[Engenharia-de-Prompts|Engenharia de Prompts]] — condiciona → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; restringido por → [[Janela-de-Contexto]]; relacionado a → [[Alucinacao]], [[Avaliacao-de-RAG]], [[Fine-tuning]] *(Issue #17, PR #21)*
 - [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(Issue #14, PR #20)*
+- [[Guardrails]] — restringe → [[Agente-de-IA]], [[Tool-Calling]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[RAG]], [[Prompt-Injection]] *(Issue #12, PR #19)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -62,6 +63,7 @@ Sistemas-Multiagente ───depende───────> Agente-de-IA, Tool-C
 Engenharia-de-Prompts ──condiciona────> Agente-de-IA, Tool-Calling, RAG
 Engenharia-de-Prompts ──restringido───> Janela-de-Contexto
 Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
+Guardrails ─────────────restringe─────> Agente-de-IA, Tool-Calling
 ```
 
 ## Como adicionar uma nota nova
