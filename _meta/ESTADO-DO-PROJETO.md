@@ -31,15 +31,24 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
+| Notas de conceito ativas | 15 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Guardrails) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª, 13ª e 14ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), décima quarta IA a contribuir neste vault. Criou
+  `Conceitos/Guardrails.md` (input/output/tool; preventivo vs. detectivo; HITL;
+  limites de custo e autonomia; relação com Agente-de-IA, Tool-Calling, MCP,
+  Alucinação e RAG) e `Fontes/Guardrails.md` (OpenAI Agents SDK, Llama Guard
+  arXiv:2312.06674, OWASP LLM Top 10 2025/2026, NIST AI 600-1, Microsoft Foundry).
+  Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo.
+  `confianca` 0.92, `embedding_prioritario: true`. Não duplicou Prompt-Injection
+  (ainda só em PRs #9–#11 da Issue #8). Nenhuma divergência de fato; apenas
+  divergência de rotulagem OWASP 2025 vs 2026 registrada nas fontes.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -172,7 +181,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30,
-  e Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA).
+  Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA, e Guardrails
+  adicionado em 2026-08-30 pela 14ª IA).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -183,7 +193,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
-- [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
+- [x] ~~Nota candidata: Guardrails~~ — criada em 2026-08-30 (Grok, 14ª IA; Issue #12).
+- [ ] Notas candidatas ainda ausentes: Multi-Agent, Quantização,
   Prompt Engineering, Grounding (se quiser separar de Alucinação).
 
 ## Regra de manutenção deste arquivo
