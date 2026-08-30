@@ -34,7 +34,8 @@ embedding_prioritario: false
 - [[Grounding]] — ancora → [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Alucinacao]], [[Tool-Calling]] *(Issue #13)*
 - [[Quantizacao|Quantização]] — otimiza → [[Fine-tuning]], [[Janela-de-Contexto]] *(Issue #16)*
 - [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15, PR #18)*
-- [[Guardrails]] — restringe → [[Agente-de-IA]], [[Tool-Calling]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[RAG]], [[Prompt-Injection]] *(Issue #12, PR #19)*
+- [[Engenharia-de-Prompts|Engenharia de Prompts]] — condiciona → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; restringido por → [[Janela-de-Contexto]]; relacionado a → [[Alucinacao]], [[Avaliacao-de-RAG]], [[Fine-tuning]] *(Issue #17, PR #21)*
+- [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(Issue #14, PR #20)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -58,7 +59,9 @@ Prompt Injection ───────restringe─────> Agente-de-IA, To
 Grounding ──────────────ancora────────> RAG, Avaliação-de-RAG
 Quantização ────────────otimiza───────> Fine-tuning, Janela-de-Contexto
 Sistemas-Multiagente ───depende───────> Agente-de-IA, Tool-Calling, Janela-de-Contexto
-Guardrails ─────────────restringe─────> Agente-de-IA, Tool-Calling
+Engenharia-de-Prompts ──condiciona────> Agente-de-IA, Tool-Calling, RAG
+Engenharia-de-Prompts ──restringido───> Janela-de-Contexto
+Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
 ```
 
 ## Como adicionar uma nota nova
