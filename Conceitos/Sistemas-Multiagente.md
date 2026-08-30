@@ -41,7 +41,7 @@ Não use quando:
 
 - **Centralizado (orquestrador):** um agente raiz decompõe, despacha e agrega. Mais fácil de limitar, auditar e abortar. Gargalo e ponto único de falha.
 - **Hierárquico:** orquestrador + suborquestradores por subtarefa (comum em pesquisa + redação + crítica). Combina isolamento com controle.
-- **Descentralizado / conversacional:** agentes falam entre si (padrão AutoGen: agentes *conversable* com políticas de auto-reply e group chat). Flexível; mais sujeito a loops, deriva de objetivo e "conversa sem término".
+- **Descentralizado / conversacional:** agentes falam entre si (como no padrão ilustrado pelo AutoGen: cada agente decide se responde ou cede o turno, dentro de um teto de turnos do grupo). Flexível; mais sujeito a loops, deriva de objetivo e **terminação indeterminada**.
 
 Na prática de produção o desenho dominante é **orquestrador + especialistas**, não um bando simétrico.
 
@@ -55,7 +55,7 @@ Comunicação típica:
 - memória compartilhada (store, board, arquivos) — exige trava e proveniência, senão dois agentes reescrevem o mesmo estado;
 - protocolos entre sistemas opacos: **A2A** (Agent2Agent, Linux Foundation; origem Google) padroniza descoberta (Agent Card), tarefas e artefatos. **MCP** continua sendo agente→ferramenta; A2A é agente→agente. Não são substitutos.
 
-Contexto não deve ser "tudo para todos". Repassar o histórico inteiro explode custo e dilui o sinal (lost in the middle). Passe o *brief*, o artefato e a restrição; recupere o resto via [[RAG]] ou memória endereçável.
+Contexto não deve ser "tudo para todos". Repassar o histórico inteiro explode custo e dilui o sinal (*lost in the middle* — ver [[Janela-de-Contexto]]). Passe o *brief*, o artefato e a restrição; recupere o resto via [[RAG]] ou memória endereçável.
 
 ### Conflitos, erros e loops
 
@@ -92,10 +92,10 @@ relations:
 rules_of_thumb:
   - "Regra 1: Comece com um único agente + ferramentas. Só adicione um segundo agente quando houver papel, permissão ou contexto que não cabem no mesmo loop."
   - "Exceção: Autor vs. crítico com incentivos opostos é um caso em que dois papéis no mesmo prompt tendem a colapsar; aí a separação é o ponto."
-  - "Regra 2: Prefira orquestrador central + especialistas a group chat simétrico em produção. É mais fácil impor teto de turnos, permissões e abort."
+  - "Regra 2: Prefira orquestrador central + especialistas a conversa simétrica livre em produção. É mais fácil impor teto de turnos, permissões e abort."
   - "Exceção: Exploração / brainstorm em ambiente sem efeito colateral pode usar conversa livre, ainda com teto global."
   - "Regra 3: Todo papel tem contrato escrito: objetivo, I/O, tools permitidas, critério de 'feito'. Sobreposição de papel é falha de especificação (MAST)."
-  - "Regra 4: Não compartilhe o histórico inteiro. Passe brief + artefato + restrição; recupere o resto com [[RAG]] ou memória endereçável."
+  - "Regra 4: Não compartilhe o histórico inteiro (lost in the middle — ver [[Janela-de-Contexto]]). Passe brief + artefato + restrição; recupere o resto com [[RAG]] ou memória endereçável."
   - "Regra 5: Trate saída de outro agente como não confiável até verificação independente (teste, tool, juiz com evidência). Alucinação propaga."
   - "Regra 6: Defina teto de turnos global e por agente, timeout e estado terminal (done/blocked/failed). Sem isso o custo explode em loop."
   - "Regra 7: MCP não substitui protocolo agente–agente. Use MCP para tools; use A2A (ou um barramento interno) quando os agentes são sistemas opacos distintos."
