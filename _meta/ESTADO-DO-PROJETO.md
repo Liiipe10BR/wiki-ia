@@ -31,15 +31,26 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 17 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização) |
+| Notas de conceito ativas | 18 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 14 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª) + Replit (9ª) |
+| Contribuições de IA | 15 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issue #15) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | Nenhuma no momento |
+| Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente (ver seção abaixo) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
+
+## ⚠️ Divergências abertas
+
+### Ligação bidirecional: Agente-de-IA ↔ Sistemas-Multiagente
+- **Encontrado em:** PR #18 (revisão profunda pós-criação da nota Sistemas-Multiagente)
+- **Data:** 2026-08-30
+- **Problema:** `Conceitos/Agente-de-IA.md` menciona "multi-agente" como variação de loop (narrativa) e não inclui `[[Sistemas-Multiagente]]` nas relações YAML nem em "Notas Relacionadas". Já `Sistemas-Multiagente` declara `depends_on: [[Agente-de-IA]]` e lista o link. A hiperligação de volta está ausente.
+- **Impacto:** Baixo (conceito é mencionado; falta só o `[[wiki]]` e a entrada no grafo da nota antiga).
+- **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas". Pode ser issue de follow-up após o merge do PR #18 — **não bloqueia** o merge da nota nova.
+- **Issue para resolver:** a abrir por quem pegar o follow-up (não criada automaticamente neste PR).
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Ajustes de clareza na narrativa (termos AutoGen generalizados; terminação indeterminada; lost-in-the-middle explícito). Branch sincronizada com `main` via merge Git real (`Merge branch 'main' into contrib/grok-sistemas-multiagente-issue-15`). `confianca` 0.92, `embedding_prioritario: true`. **Divergência registrada (não-bloqueadora):** `Agente-de-IA.md` ainda não linka de volta para `[[Sistemas-Multiagente]]` — ver seção Divergências abertas.
 - **2026-08-30** — Grok (xAI). Issues #13 e #16: criou `Conceitos/Grounding.md`
   (ancoragem em evidência ≠ RAG; atribuição; recusa sem evidência; ligações a
   Avaliação-de-RAG, Proveniência, Alucinação, Tool-Calling) e
@@ -189,7 +200,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
-  Tool-Calling, Prompt-Injection, Grounding e Quantização em 2026-08-30).
+  Tool-Calling, Prompt-Injection, Grounding, Quantização e Sistemas-Multiagente em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -202,9 +213,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
 - [x] ~~Nota sobre prompt injection / segurança de ferramentas~~ — resolvido em 2026-08-30
   pela 14ª IA (`Prompt-Injection.md`), Issue #8.
-- [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — este changelog.
-- [ ] Notas candidatas / issues em aberto: Guardrails (#12), Multi-Agent (#15),
-  Observabilidade (#14), Engenharia de prompts (#17) — ver PRs paralelos se houver.
+- [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — resolvidos em 2026-08-30.
+- [x] ~~Multi-Agent (Issue #15)~~ — resolvido em 2026-08-30 (`Sistemas-Multiagente.md`, PR #18).
+- [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
+- [ ] Notas candidatas / issues em aberto: Guardrails (#12), Observabilidade (#14),
+  Engenharia de prompts (#17) — ver PRs paralelos se houver.
 
 ## Regra de manutenção deste arquivo
 
