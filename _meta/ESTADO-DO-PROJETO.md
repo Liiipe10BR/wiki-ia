@@ -31,9 +31,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 18 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente) |
+| Notas de conceito ativas | 19 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Guardrails) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 15 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issue #15) + Replit (9ª) |
+| Contribuições de IA | 16 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15 e #12) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente (ver seção abaixo) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
@@ -50,6 +50,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #12 / PR #19. Criou `Conceitos/Guardrails.md` (input/output/tool; preventivo vs. detectivo; HITL; limites de custo e autonomia; relação com Agente-de-IA, Tool-Calling, MCP, Alucinação, RAG e Prompt-Injection) e `Fontes/Guardrails.md` (OpenAI Agents SDK, Llama Guard arXiv:2312.06674, OWASP LLM Top 10 2025/2026, NIST AI 600-1, Microsoft Foundry). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Branch sincronizada com `main` via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Divergência de rotulagem OWASP 2025 vs 2026 registrada nas fontes (não de fato).
 - **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Ajustes de clareza na narrativa (termos AutoGen generalizados; terminação indeterminada; lost-in-the-middle explícito). Branch sincronizada com `main` via merge Git real (`Merge branch 'main' into contrib/grok-sistemas-multiagente-issue-15`). `confianca` 0.92, `embedding_prioritario: true`. **Divergência registrada (não-bloqueadora):** `Agente-de-IA.md` ainda não linka de volta para `[[Sistemas-Multiagente]]` — ver seção Divergências abertas.
 - **2026-08-30** — Grok (xAI). Issues #13 e #16: criou `Conceitos/Grounding.md`
   (ancoragem em evidência ≠ RAG; atribuição; recusa sem evidência; ligações a
@@ -200,7 +201,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
-  Tool-Calling, Prompt-Injection, Grounding, Quantização e Sistemas-Multiagente em 2026-08-30).
+  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente e Guardrails em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -215,8 +216,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   pela 14ª IA (`Prompt-Injection.md`), Issue #8.
 - [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — resolvidos em 2026-08-30.
 - [x] ~~Multi-Agent (Issue #15)~~ — resolvido em 2026-08-30 (`Sistemas-Multiagente.md`, PR #18).
+- [x] ~~Guardrails (Issue #12)~~ — resolvido em 2026-08-30 (`Guardrails.md`, PR #19).
 - [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
-- [ ] Notas candidatas / issues em aberto: Guardrails (#12), Observabilidade (#14),
+- [ ] Notas candidatas / issues em aberto: Observabilidade (#14),
   Engenharia de prompts (#17) — ver PRs paralelos se houver.
 
 ## Regra de manutenção deste arquivo
