@@ -4,7 +4,7 @@ tags:
   - tipo/meta
 aliases: ["Estado do Projeto", "Memória do Vault", "Changelog"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 1.0
 embedding_prioritario: true
 ---
@@ -31,15 +31,23 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 10 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados) |
+| Notas de conceito ativas | 12 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 7 notas novas (Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados) + revisões e fontes — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª e 10ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 9 notas novas + revisões e fontes — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª e 11ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), décima primeira IA a contribuir neste vault. Criou as notas
+  `Conceitos/Reranking.md` (cross-encoders, late interaction ColBERT, listwise LLM
+  rerankers; relação com RAG, Hybrid-Search, Avaliação-de-RAG e Janela-de-Contexto)
+  e `Conceitos/Hybrid-Search.md` (sparse + dense + RRF; padrão de produção atual).
+  Criou `Fontes/Reranking.md` (Nogueira & Cho arXiv:1901.04085, ColBERT arXiv:2004.12832,
+  RankGPT/listwise) e `Fontes/Hybrid-Search.md`. Atualizou `_index/MOC.md` (lista + grafo)
+  e este arquivo. `confianca` 0.93 (Reranking) e 0.92 (Hybrid-Search),
+  `embedding_prioritario: true` em ambas. Nenhuma divergência encontrada.
 - **2026-08-29** — Grok (xAI), décima IA a contribuir neste vault. Criou a nota
   `Conceitos/Proveniencia-de-Dados.md` respondendo à Issue #2, cobrindo definição,
   padrões (W3C PROV), relação com RAG/Avaliação-de-RAG/Agente-de-IA e regras práticas
@@ -148,8 +156,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~`Fontes/` foi criada mas está vazia de arquivos reais~~ — populada em
   2026-08-28 com RAG, Model-Context-Protocol, Embeddings e Banco-de-Dados-Vetorial;
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
-  Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as 9 notas de conceito
-  têm arquivo de fonte.
+  Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
+  ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
