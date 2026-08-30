@@ -31,22 +31,43 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 15 (as 14 anteriores + Observabilidade-de-IA nesta branch / Issue #14) |
+| Notas de conceito ativas | 18 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude + Grok (xAI) + Replit |
+| Contribuições de IA | 15 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issue #15) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | Schema OTel GenAI ainda Development; coexistência de atributos antigos (`gen_ai.prompt`) e novos (`gen_ai.input.messages`) — registrada em Observabilidade-de-IA |
-| Ferramentas auxiliares | `scripts/validar_links.py` + workflow CI `.github/workflows/validar-links.yml` |
+| Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente (ver seção abaixo) |
+| Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
+
+## ⚠️ Divergências abertas
+
+### Ligação bidirecional: Agente-de-IA ↔ Sistemas-Multiagente
+- **Encontrado em:** PR #18 (revisão profunda pós-criação da nota Sistemas-Multiagente)
+- **Data:** 2026-08-30
+- **Problema:** `Conceitos/Agente-de-IA.md` menciona "multi-agente" como variação de loop (narrativa) e não inclui `[[Sistemas-Multiagente]]` nas relações YAML nem em "Notas Relacionadas". Já `Sistemas-Multiagente` declara `depends_on: [[Agente-de-IA]]` e lista o link. A hiperligação de volta está ausente.
+- **Impacto:** Baixo (conceito é mencionado; falta só o `[[wiki]]` e a entrada no grafo da nota antiga).
+- **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas". Pode ser issue de follow-up após o merge do PR #18 — **não bloqueia** o merge da nota nova.
+- **Issue para resolver:** a abrir por quem pegar o follow-up (não criada automaticamente neste PR).
 
 ## Changelog (mais recente primeiro)
 
-- **2026-08-30** — Grok (xAI), Issue #14. Criou `Conceitos/Observabilidade-de-IA.md`
-  (traces de prompts/modelo/tokens/latência/custo, retrieval, tools, erros,
-  avaliação e privacidade) e `Fontes/Observabilidade-de-IA.md` (OTel GenAI
-  semantic conventions, OpenInference + redaction, OWASP LLM02:2025).
+- **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Ajustes de clareza na narrativa (termos AutoGen generalizados; terminação indeterminada; lost-in-the-middle explícito). Branch sincronizada com `main` via merge Git real (`Merge branch 'main' into contrib/grok-sistemas-multiagente-issue-15`). `confianca` 0.92, `embedding_prioritario: true`. **Divergência registrada (não-bloqueadora):** `Agente-de-IA.md` ainda não linka de volta para `[[Sistemas-Multiagente]]` — ver seção Divergências abertas.
+- **2026-08-30** — Grok (xAI). Issues #13 e #16: criou `Conceitos/Grounding.md`
+  (ancoragem em evidência ≠ RAG; atribuição; recusa sem evidência; ligações a
+  Avaliação-de-RAG, Proveniência, Alucinação, Tool-Calling) e
+  `Conceitos/Quantizacao.md` (PTQ vs QAT; pesos vs ativações/KV; trade-offs;
+  sem eleger método universal). Fontes: Attributed QA arXiv:2212.08037,
+  survey grounding arXiv:2407.12858, RAGONITE arXiv:2412.10571; GPTQ
+  arXiv:2210.17323, AWQ arXiv:2306.00978, surveys low-bit arXiv:2409.16694 e
+  arXiv:2409.11650. Atualizou MOC, Fontes/README e este arquivo.
+  `confianca` 0.93 (Grounding) e 0.92 (Quantização). Nenhuma divergência.
+- **2026-08-30** — Grok (xAI), décima quarta IA a contribuir neste vault. Respondeu à
+  Issue #8: criou `Conceitos/Prompt-Injection.md` (injeção direta vs. indireta, RAG
+  como canal, menor privilégio, validação de argumentos, HITL, limites de custo/chamadas,
+  MCP/tool-calling não tornam a ferramenta automaticamente segura) e
+  `Fontes/Prompt-Injection.md` (OWASP LLM01 2025/2026, Greshake et al. arXiv:2302.12173,
+  NIST AI 100-2e2025, docs oficiais de segurança do MCP, OWASP MCP Cheat Sheet).
   Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo.
-  `confianca` 0.92, `embedding_prioritario: true`. Não duplicou Prompt-Injection
-  (PRs #9, #10, #11 em paralelo). Sem merge e sem edição de `main`.
+  `confianca` 0.93, `embedding_prioritario: true`. Nenhuma divergência encontrada.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -71,9 +92,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   `[[wiki]]` quebrados e não faz merge automático. Atualizou este arquivo.
 - **2026-08-29** — Grok (xAI), décima IA a contribuir neste vault. Criou a nota
   `Conceitos/Proveniencia-de-Dados.md` respondendo à Issue #2, cobrindo definição,
-  padrões (W3C PROV), relação com RAG/Avaliação-de-RAG/Agente-de-IA e regras práticas
-  de preservação de metadados e cadeia de evidência. Criou `Fontes/Proveniencia-de-Dados.md`
-  com fontes reais (W3C PROV, survey arXiv:2601.14311, Data Provenance Initiative / MIT,
+  padrões (W3C PROV, survey arXiv:2601.14311, Data Provenance Initiative / MIT,
   position paper ICML 2024 e survey de lifecycle provenance). Atualizou `_index/MOC.md`
   (lista + grafo) e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
   Nenhuma divergência encontrada.
@@ -174,18 +193,29 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~Criar uma nota sobre avaliação de RAG~~ — resolvido em 2026-08-29
   pela nona IA (`Avaliacao-de-RAG.md`), com fontes acadêmicas e regras para
   separar recuperação, fidelidade e relevância.
-- [x] ~~`Fontes/` foi criada mas está vazia de arquivos reais~~ — populada;
-  Observabilidade-de-IA adicionada em 2026-08-30 (Issue #14).
+- [x] ~~`Fontes/` foi criada mas está vazia de arquivos reais~~ — populada em
+  2026-08-28 com RAG, Model-Context-Protocol, Embeddings e Banco-de-Dados-Vetorial;
+  completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
+  Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
+  ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
+  Tool-Calling, Prompt-Injection, Grounding, Quantização e Sistemas-Multiagente em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
-  distingue exemplo de doc vs. link real).
+  distingue exemplo de doc vs. link real). *(rodado em 2026-08-28 pela
+  quinta IA — ainda sem link quebrado, decisão sobre os placeholders
+  continua em aberto)*
 - [x] ~~`Fontes/` ainda sem arquivo real para Fine-tuning, Chunking e
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
-- [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
-  Prompt Engineering, Grounding (se quiser separar de Alucinação).
+- [x] ~~Nota sobre prompt injection / segurança de ferramentas~~ — resolvido em 2026-08-30
+  pela 14ª IA (`Prompt-Injection.md`), Issue #8.
+- [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — resolvidos em 2026-08-30.
+- [x] ~~Multi-Agent (Issue #15)~~ — resolvido em 2026-08-30 (`Sistemas-Multiagente.md`, PR #18).
+- [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
+- [ ] Notas candidatas / issues em aberto: Guardrails (#12), Observabilidade (#14),
+  Engenharia de prompts (#17) — ver PRs paralelos se houver.
 
 ## Regra de manutenção deste arquivo
 
