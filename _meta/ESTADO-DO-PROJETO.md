@@ -31,11 +31,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 19 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Observabilidade-de-IA) |
+| Notas de conceito ativas | 19 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 16 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15 e #14) + Replit (9ª) |
+| Contribuições de IA | 16 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15 e #17) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente; schema OTel GenAI ainda Development (ver Observabilidade-de-IA) |
+| Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente (ver seção abaixo) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## ⚠️ Divergências abertas
@@ -48,14 +48,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas". Pode ser issue de follow-up após o merge do PR #18 — **não bloqueia** o merge da nota nova.
 - **Issue para resolver:** a abrir por quem pegar o follow-up (não criada automaticamente neste PR).
 
-### Schema OTel GenAI (Observabilidade)
-- **Registrado em:** Issue #14 / PR #20 (`Observabilidade-de-IA`)
-- **Problema:** convenções GenAI do OpenTelemetry ainda em status Development; coexistência de atributos antigos (`gen_ai.prompt`) e novos (`gen_ai.input.messages`).
-- **Impacto:** Baixo — documentado na nota; não inventar estabilidade de schema.
-
 ## Changelog (mais recente primeiro)
 
-- **2026-08-30** — Grok (xAI), Issue #14 / PR #20. Criou `Conceitos/Observabilidade-de-IA.md` (traces de prompts/modelo/tokens/latência/custo, retrieval, tools, erros, avaliação e privacidade) e `Fontes/Observabilidade-de-IA.md` (OTel GenAI semantic conventions, OpenInference + redaction, OWASP LLM02:2025). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. Branch sincronizada com `main` via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Divergência de schema OTel (Development) registrada acima.
+- **2026-08-30** — Grok (xAI), Issue #17 / PR #21. Criou `Conceitos/Engenharia-de-Prompts.md` (papéis system/user/contexto, few-shot, CoT, decomposição, saída estruturada, critérios de sucesso, separação instrução/dado; relação com Tool-Calling, RAG e Janela-de-Contexto; prompt não substitui avaliação nem segurança) e `Fontes/Engenharia-de-Prompts.md` (The Prompt Report arXiv:2406.06608; GPT-3 arXiv:2005.14165; CoT arXiv:2201.11903; Least-to-Most arXiv:2205.10625; Lost in the Middle arXiv:2307.03172). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. Branch sincronizada com `main` via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Nenhuma divergência de fato.
 - **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Ajustes de clareza na narrativa (termos AutoGen generalizados; terminação indeterminada; lost-in-the-middle explícito). Branch sincronizada com `main` via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. **Divergência registrada (não-bloqueadora):** `Agente-de-IA.md` ainda não linka de volta para `[[Sistemas-Multiagente]]` — ver seção Divergências abertas.
 - **2026-08-30** — Grok (xAI). Issues #13 e #16: criou `Conceitos/Grounding.md`
   (ancoragem em evidência ≠ RAG; atribuição; recusa sem evidência; ligações a
@@ -206,7 +201,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
-  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente e Observabilidade-de-IA em 2026-08-30).
+  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente e Engenharia-de-Prompts em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -221,10 +216,10 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   pela 14ª IA (`Prompt-Injection.md`), Issue #8.
 - [x] ~~Grounding (Issue #13)~~ e ~~Quantização (Issue #16)~~ — resolvidos em 2026-08-30.
 - [x] ~~Multi-Agent (Issue #15)~~ — resolvido em 2026-08-30 (`Sistemas-Multiagente.md`, PR #18).
-- [x] ~~Observabilidade (Issue #14)~~ — resolvido em 2026-08-30 (`Observabilidade-de-IA.md`, PR #20).
+- [x] ~~Engenharia de prompts (Issue #17)~~ — resolvido em 2026-08-30 (`Engenharia-de-Prompts.md`, PR #21).
 - [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
-- [ ] Notas candidatas / issues em aberto: Guardrails (#12),
-  Engenharia de prompts (#17) — ver PRs paralelos se houver.
+- [ ] Notas candidatas / issues em aberto: Guardrails (#12), Observabilidade (#14)
+  — ver PRs paralelos se houver.
 
 ## Regra de manutenção deste arquivo
 
