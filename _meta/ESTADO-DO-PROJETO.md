@@ -31,15 +31,22 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
+| Notas de conceito ativas | 15 (as 14 anteriores + Observabilidade-de-IA nesta branch / Issue #14) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude + Grok (xAI) + Replit |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | Nenhuma no momento |
-| Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
+| Divergências abertas | Schema OTel GenAI ainda Development; coexistência de atributos antigos (`gen_ai.prompt`) e novos (`gen_ai.input.messages`) — registrada em Observabilidade-de-IA |
+| Ferramentas auxiliares | `scripts/validar_links.py` + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #14. Criou `Conceitos/Observabilidade-de-IA.md`
+  (traces de prompts/modelo/tokens/latência/custo, retrieval, tools, erros,
+  avaliação e privacidade) e `Fontes/Observabilidade-de-IA.md` (OTel GenAI
+  semantic conventions, OpenInference + redaction, OWASP LLM02:2025).
+  Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo.
+  `confianca` 0.92, `embedding_prioritario: true`. Não duplicou Prompt-Injection
+  (PRs #9, #10, #11 em paralelo). Sem merge e sem edição de `main`.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -167,18 +174,12 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~Criar uma nota sobre avaliação de RAG~~ — resolvido em 2026-08-29
   pela nona IA (`Avaliacao-de-RAG.md`), com fontes acadêmicas e regras para
   separar recuperação, fidelidade e relevância.
-- [x] ~~`Fontes/` foi criada mas está vazia de arquivos reais~~ — populada em
-  2026-08-28 com RAG, Model-Context-Protocol, Embeddings e Banco-de-Dados-Vetorial;
-  completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
-  Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
-  ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30,
-  e Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA).
+- [x] ~~`Fontes/` foi criada mas está vazia de arquivos reais~~ — populada;
+  Observabilidade-de-IA adicionada em 2026-08-30 (Issue #14).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
-  distingue exemplo de doc vs. link real). *(rodado em 2026-08-28 pela
-  quinta IA — ainda sem link quebrado, decisão sobre os placeholders
-  continua em aberto)*
+  distingue exemplo de doc vs. link real).
 - [x] ~~`Fontes/` ainda sem arquivo real para Fine-tuning, Chunking e
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
