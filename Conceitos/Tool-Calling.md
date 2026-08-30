@@ -45,6 +45,7 @@ Isso se conecta diretamente a [[Model-Context-Protocol]] (padronização de como
 ferramentas e contexto são expostos a agentes) e a [[Agente-de-IA]] (loop de
 pensamento–ação–observação). Riscos incluem: inventar nomes de APIs, argumentos
 inválidos, loops infinitos de chamadas e vazar dados sensíveis em parâmetros.
+Ver também [[Prompt-Injection]]: observações de tool e schemas são canal de injeção.
 
 ---
 
@@ -59,6 +60,7 @@ relations:
   - related_to: "[[RAG]] (busca e retrieval podem ser tools)"
   - related_to: "[[Alucinacao]] (alucinar APIs ou argumentos é um modo de falha comum)"
   - related_to: "[[Janela-de-Contexto]] (schemas de tools e resultados competem por tokens)"
+  - related_to: "[[Prompt-Injection]] (payloads em args/observações podem desviar a próxima chamada)"
 rules_of_thumb:
   - "Regra 1: Descreva cada tool com schema claro (nome, parâmetros, tipos, quando usar); modelos seguem melhor interfaces explícitas."
   - "Regra 2: Valide argumentos no runtime antes de executar; nunca confie cegamente no JSON gerado pelo modelo."
@@ -77,6 +79,7 @@ rules_of_thumb:
 - [[Alucinacao]]
 - [[Janela-de-Contexto]]
 - [[Proveniencia-de-Dados]]
+- [[Prompt-Injection]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Tool-Calling.md`.
