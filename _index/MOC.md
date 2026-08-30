@@ -4,7 +4,7 @@ tags:
   - tipo/indice
 aliases: ["MOC", "Map of Content", "Índice"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 1.0
 embedding_prioritario: false
 ---
@@ -26,6 +26,8 @@ embedding_prioritario: false
 - [[Agente-de-IA]] — depende de → [[Model-Context-Protocol]], [[RAG]], [[Janela-de-Contexto]]; relacionado a → [[Fine-tuning]], [[Embeddings]] *(contribuída por IA — ver `contribuido_por`)*
 - [[Avaliacao-de-RAG|Avaliação de RAG]] — valida → [[RAG]], [[Chunking]], [[Embeddings]], [[Agente-de-IA]] *(contribuída pela nona IA — ver `contribuido_por`)*
 - [[Proveniencia-de-Dados|Proveniência de Dados]] — habilita → [[RAG]], [[Avaliacao-de-RAG]], [[Agente-de-IA]]; relacionado a → [[Chunking]], [[Embeddings]], [[Fine-tuning]] *(contribuída por Grok, décima IA — ver `contribuido_por`)*
+- [[Reranking]] — refina → [[RAG]], [[Hybrid-Search]]; relacionado a → [[Embeddings]], [[Avaliacao-de-RAG]], [[Janela-de-Contexto]] *(contribuída por Grok, 11ª IA — ver `contribuido_por`)*
+- [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 11ª IA — ver `contribuido_por`)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -41,6 +43,8 @@ Janela-de-Contexto ─────alternativa───> Fine-tuning
 RAG ────────────────────habilita──────> Agente-de-IA
 Avaliação-de-RAG ───────valida────────> RAG, Chunking, Embeddings, Agente-de-IA
 Proveniência-de-Dados ──habilita──────> RAG, Avaliação-de-RAG, Agente-de-IA
+Hybrid-Search ──────────habilita──────> RAG
+Reranking ──────────────refina────────> RAG, Hybrid-Search
 ```
 
 ## Como adicionar uma nota nova
