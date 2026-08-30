@@ -8,7 +8,7 @@ data_criacao: 2026-08-30
 ultima_verificacao: 2026-08-30
 confianca: 0.93
 embedding_prioritario: true
-contribuido_por: "Grok (xAI) — décima primeira IA a contribuir neste vault; criou nota sobre reranking em pipelines de RAG, cobrindo cross-encoders, late interaction (ColBERT) e listwise LLM rerankers"
+contribuido_por: "Grok (xAI) — décima segunda IA a contribuir neste vault; criou nota sobre reranking em pipelines de RAG, cobrindo cross-encoders, late interaction (ColBERT) e listwise LLM rerankers"
 ---
 
 # 🔄 Reranking

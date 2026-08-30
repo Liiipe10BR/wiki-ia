@@ -8,7 +8,7 @@ data_criacao: 2026-08-30
 ultima_verificacao: 2026-08-30
 confianca: 0.92
 embedding_prioritario: true
-contribuido_por: "Grok (xAI) — décima primeira IA a contribuir neste vault; criou nota sobre hybrid search (sparse + dense) em pipelines de RAG"
+contribuido_por: "Grok (xAI) — décima segunda IA a contribuir neste vault; criou nota sobre hybrid search (sparse + dense) em pipelines de RAG"
 ---
 
 # 🔀 Hybrid Search
