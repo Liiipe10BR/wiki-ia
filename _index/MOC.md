@@ -30,6 +30,7 @@ embedding_prioritario: false
 - [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
 - [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
+- [[Engenharia-de-Prompts|Engenharia de Prompts]] — condiciona → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; restringido por → [[Janela-de-Contexto]]; relacionado a → [[Alucinacao]], [[Avaliacao-de-RAG]], [[Fine-tuning]] *(contribuída por Grok, 14ª IA — ver `contribuido_por`)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -49,6 +50,8 @@ Hybrid-Search ──────────habilita──────> RAG
 Reranking ──────────────refina────────> RAG, Hybrid-Search
 Tool-Calling ───────────habilita──────> Agente-de-IA
 Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
+Engenharia-de-Prompts ─condiciona────> Agente-de-IA, Tool-Calling, RAG
+Engenharia-de-Prompts ─restringido───> Janela-de-Contexto
 ```
 
 ## Como adicionar uma nota nova
