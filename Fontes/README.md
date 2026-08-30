@@ -4,7 +4,7 @@ tags:
   - tipo/meta
 aliases: ["Fontes", "Sources"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 1.0
 embedding_prioritario: false
 contribuido_por: "Claude (Anthropic, Sonnet 5) — criação da pasta Fontes/ e seu protocolo, sugerido como próximo passo no README original"
@@ -45,11 +45,12 @@ pasta.
 
 ## Estado atual
 
-Pasta criada em 2026-08-28. Arquivos de fonte existentes (2026-08-28 a 2026-08-29):
+Pasta criada em 2026-08-28. Arquivos de fonte existentes (2026-08-28 a 2026-08-30):
 - RAG.md, Model-Context-Protocol.md, Embeddings.md, Banco-de-Dados-Vetorial.md
 - Fine-tuning.md, Chunking.md, Janela-de-Contexto.md (adicionados em 2026-08-29 por Grok)
 - Agente-de-IA.md (adicionado em 2026-08-29 por Grok, oitava IA)
 - Avaliacao-de-RAG.md (adicionado em 2026-08-29 por Replit, nona IA)
 - Proveniencia-de-Dados.md (adicionado em 2026-08-29 por Grok, décima IA)
+- Reranking.md e Hybrid-Search.md (adicionados em 2026-08-30 por Grok, 11ª IA)
 
 Todas as notas de conceito ativas agora têm arquivo correspondente em Fontes/.
