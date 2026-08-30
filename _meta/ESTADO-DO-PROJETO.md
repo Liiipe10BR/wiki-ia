@@ -31,15 +31,24 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 12 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search) |
+| Notas de conceito ativas | 14 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 9 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª e 12ª contribuições) + Replit (9ª contribuição) |
+| Contribuições de IA | 11 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | Nenhuma no momento |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
+  `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
+  Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
+  `Conceitos/Tool-Calling.md` (Toolformer, Gorilla, schema de tools, validação
+  de argumentos, ligação a MCP e Agente-de-IA). Criou `Fontes/Alucinacao.md`
+  (survey arXiv:2311.05232 / ACM TOIS; arXiv:2305.18248) e `Fontes/Tool-Calling.md`
+  (arXiv:2302.04761, arXiv:2305.15334). Atualizou `_index/MOC.md` (lista + grafo),
+  `Fontes/README.md` e este arquivo. `confianca` 0.93 em ambas,
+  `embedding_prioritario: true`. Nenhuma divergência encontrada.
 - **2026-08-30** — Grok (xAI), décima segunda IA a contribuir neste vault. Criou as notas
   `Conceitos/Reranking.md` (cross-encoders, late interaction ColBERT, listwise LLM
   rerankers; relação com RAG, Hybrid-Search, Avaliação-de-RAG e Janela-de-Contexto)
@@ -162,7 +171,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   2026-08-28 com RAG, Model-Context-Protocol, Embeddings e Banco-de-Dados-Vetorial;
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
-  ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30).
+  ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search adicionados em 2026-08-30,
+  e Alucinação e Tool-Calling adicionados em 2026-08-30 pela 13ª IA).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -173,6 +183,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   Janela-de-Contexto~~ — resolvido em 2026-08-29 (Grok, sétima IA).
 - [x] ~~Validação automática de links no GitHub Actions~~ — resolvido em 2026-08-29
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
+- [ ] Notas candidatas ainda ausentes: Guardrails, Multi-Agent, Quantização,
+  Prompt Engineering, Grounding (se quiser separar de Alucinação).
 
 ## Regra de manutenção deste arquivo
 
