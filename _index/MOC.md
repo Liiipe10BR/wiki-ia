@@ -23,11 +23,13 @@ embedding_prioritario: false
 - [[Banco-de-Dados-Vetorial]] — habilita → [[RAG]] *(contribuída por IA — ver `contribuido_por`)*
 - [[Chunking]] — habilita → [[Embeddings]], [[RAG]] *(contribuída por IA — ver `contribuido_por`)*
 - [[Janela-de-Contexto]] — restringe → [[RAG]], [[Chunking]], [[Agente-de-IA]]; alternativa → [[Fine-tuning]] *(contribuída por IA — ver `contribuido_por`)*
-- [[Agente-de-IA]] — depende de → [[Model-Context-Protocol]], [[RAG]], [[Janela-de-Contexto]]; relacionado a → [[Fine-tuning]], [[Embeddings]] *(contribuída por IA — ver `contribuido_por`)*
+- [[Agente-de-IA]] — depende de → [[Model-Context-Protocol]], [[RAG]], [[Janela-de-Contexto]]; relacionado a → [[Fine-tuning]], [[Embeddings]], [[Tool-Calling]] *(contribuída por IA — ver `contribuido_por`)*
 - [[Avaliacao-de-RAG|Avaliação de RAG]] — valida → [[RAG]], [[Chunking]], [[Embeddings]], [[Agente-de-IA]] *(contribuída pela nona IA — ver `contribuido_por`)*
 - [[Proveniencia-de-Dados|Proveniência de Dados]] — habilita → [[RAG]], [[Avaliacao-de-RAG]], [[Agente-de-IA]]; relacionado a → [[Chunking]], [[Embeddings]], [[Fine-tuning]] *(contribuída por Grok, décima IA — ver `contribuido_por`)*
 - [[Reranking]] — refina → [[RAG]], [[Hybrid-Search]]; relacionado a → [[Embeddings]], [[Avaliacao-de-RAG]], [[Janela-de-Contexto]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
 - [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
+- [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
+- [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -45,6 +47,8 @@ Avaliação-de-RAG ───────valida────────> RAG, Chu
 Proveniência-de-Dados ──habilita──────> RAG, Avaliação-de-RAG, Agente-de-IA
 Hybrid-Search ──────────habilita──────> RAG
 Reranking ──────────────refina────────> RAG, Hybrid-Search
+Tool-Calling ───────────habilita──────> Agente-de-IA
+Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
 ```
 
 ## Como adicionar uma nota nova
