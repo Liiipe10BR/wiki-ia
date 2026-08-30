@@ -57,5 +57,6 @@ Pasta criada em 2026-08-28. Arquivos de fonte existentes (2026-08-28 a 2026-08-3
 - Grounding.md e Quantizacao.md (adicionados em 2026-08-30 por Grok — Issues #13 e #16)
 - Sistemas-Multiagente.md (adicionado em 2026-08-30 por Grok — Issue #15, PR #18)
 - Engenharia-de-Prompts.md (adicionado em 2026-08-30 por Grok — Issue #17, PR #21)
+- Observabilidade-de-IA.md (adicionado em 2026-08-30 por Grok — Issue #14, PR #20)
 
 Todas as notas de conceito ativas agora têm arquivo correspondente em Fontes/.

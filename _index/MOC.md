@@ -35,6 +35,7 @@ embedding_prioritario: false
 - [[Quantizacao|Quantização]] — otimiza → [[Fine-tuning]], [[Janela-de-Contexto]] *(Issue #16)*
 - [[Sistemas-Multiagente]] — depende de → [[Agente-de-IA]], [[Tool-Calling]], [[Janela-de-Contexto]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[Avaliacao-de-RAG]], [[Proveniencia-de-Dados]] *(Issue #15, PR #18)*
 - [[Engenharia-de-Prompts|Engenharia de Prompts]] — condiciona → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; restringido por → [[Janela-de-Contexto]]; relacionado a → [[Alucinacao]], [[Avaliacao-de-RAG]], [[Fine-tuning]] *(Issue #17, PR #21)*
+- [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(Issue #14, PR #20)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -60,6 +61,7 @@ Quantização ────────────otimiza───────> 
 Sistemas-Multiagente ───depende───────> Agente-de-IA, Tool-Calling, Janela-de-Contexto
 Engenharia-de-Prompts ──condiciona────> Agente-de-IA, Tool-Calling, RAG
 Engenharia-de-Prompts ──restringido───> Janela-de-Contexto
+Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
 ```
 
 ## Como adicionar uma nota nova
