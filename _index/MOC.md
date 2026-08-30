@@ -30,6 +30,7 @@ embedding_prioritario: false
 - [[Hybrid-Search]] — habilita → [[RAG]]; relacionado a → [[Embeddings]], [[Banco-de-Dados-Vetorial]], [[Reranking]] *(contribuída por Grok, 12ª IA — ver `contribuido_por`)*
 - [[Alucinacao|Alucinação]] — conflita com → [[RAG]], [[Proveniencia-de-Dados]]; relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
 - [[Tool-Calling]] — habilita → [[Agente-de-IA]]; relacionado a → [[Model-Context-Protocol]], [[RAG]], [[Alucinacao]] *(contribuída por Grok, 13ª IA — ver `contribuido_por`)*
+- [[Quantizacao|Quantização]] — relacionado a → [[Fine-tuning]], [[Janela-de-Contexto]], [[Agente-de-IA]], [[RAG]] *(contribuída por Grok, 14ª IA — ver `contribuido_por`)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -49,6 +50,7 @@ Hybrid-Search ──────────habilita──────> RAG
 Reranking ──────────────refina────────> RAG, Hybrid-Search
 Tool-Calling ───────────habilita──────> Agente-de-IA
 Alucinação ─────────────conflita──────> RAG, Proveniência-de-Dados
+Quantização ────────────relacionado───> Fine-tuning, Janela-de-Contexto, Agente-de-IA, RAG
 ```
 
 ## Como adicionar uma nota nova
