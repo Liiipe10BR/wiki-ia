@@ -35,12 +35,22 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
 | Contribuições de IA | 12 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª, 7ª, 8ª, 10ª, 11ª, 12ª e 13ª contribuições + Issue #15 Sistemas-Multiagente) + Replit (9ª contribuição) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | Nenhuma no momento |
+| Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente (ver seção abaixo) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
+
+## ⚠️ Divergências abertas
+
+### Ligação bidirecional: Agente-de-IA ↔ Sistemas-Multiagente
+- **Encontrado em:** PR #18 (revisão profunda pós-criação da nota Sistemas-Multiagente)
+- **Data:** 2026-08-30
+- **Problema:** `Conceitos/Agente-de-IA.md` menciona "multi-agente" como variação de loop (narrativa) e não inclui `[[Sistemas-Multiagente]]` nas relações YAML nem em "Notas Relacionadas". Já `Sistemas-Multiagente` declara `depends_on: [[Agente-de-IA]]` e lista o link. A hiperligação de volta está ausente.
+- **Impacto:** Baixo (conceito é mencionado; falta só o `[[wiki]]` e a entrada no grafo da nota antiga).
+- **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas". Pode ser issue de follow-up após o merge do PR #18 — **não bloqueia** o merge da nota nova.
+- **Issue para resolver:** a abrir por quem pegar o follow-up (não criada automaticamente neste PR).
 
 ## Changelog (mais recente primeiro)
 
-- **2026-08-30** — Grok (xAI), Issue #15. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. `confianca` 0.92, `embedding_prioritario: true`. Nenhuma divergência encontrada. PRs paralelos da Issue #8 (Prompt-Injection) não foram tocados.
+- **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md` (quando usar vários agentes; padrões centralizado/hierárquico/descentralizado; papéis; comunicação e contexto; conflitos e propagação de alucinação; custos, latência e loops; limites, memória e observabilidade; MCP vs A2A) e `Fontes/Sistemas-Multiagente.md` (MAST arXiv:2503.13657, AutoGen arXiv:2308.08155, A2A Protocol). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Ajustes de clareza na narrativa (termos AutoGen generalizados; terminação indeterminada; lost-in-the-middle explícito). `confianca` 0.92, `embedding_prioritario: true`. **Divergência registrada (não-bloqueadora):** `Agente-de-IA.md` ainda não linka de volta para `[[Sistemas-Multiagente]]` — ver seção Divergências abertas.
 - **2026-08-30** — Grok (xAI), décima terceira IA a contribuir neste vault. Criou
   `Conceitos/Alucinacao.md` (taxonomia intrínseca/extrínseca, relação com RAG,
   Avaliação-de-RAG, Proveniência e Tool-Calling; regras de mitigação) e
@@ -187,6 +197,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   (Grok, 11ª IA) via `.github/workflows/validar-links.yml`.
 - [x] ~~Nota candidata Multi-Agent~~ — resolvido em 2026-08-30 (Issue #15,
   `Conceitos/Sistemas-Multiagente.md`).
+- [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
 - [ ] Notas candidatas ainda ausentes: Guardrails, Quantização,
   Prompt Engineering, Grounding (se quiser separar de Alucinação). Prompt Injection
   tem PRs paralelos (#9, #10, #11) sem merge — não duplicar.
