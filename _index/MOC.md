@@ -37,6 +37,7 @@ embedding_prioritario: false
 - [[Engenharia-de-Prompts|Engenharia de Prompts]] — condiciona → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]]; restringido por → [[Janela-de-Contexto]]; relacionado a → [[Alucinacao]], [[Avaliacao-de-RAG]], [[Fine-tuning]] *(Issue #17, PR #21)*
 - [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(Issue #14, PR #20)*
 - [[Guardrails]] — restringe → [[Agente-de-IA]], [[Tool-Calling]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[RAG]], [[Prompt-Injection]] *(Issue #12, PR #19)*
+- [[Memoria-de-Agentes|Memória de Agentes]] — depende de → [[Agente-de-IA]], [[Janela-de-Contexto]]; relacionado a → [[RAG]], [[Tool-Calling]], [[Sistemas-Multiagente]], [[Observabilidade-de-IA]], [[Guardrails]] *(Issue #25)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -64,6 +65,7 @@ Engenharia-de-Prompts ──condiciona────> Agente-de-IA, Tool-Calling, 
 Engenharia-de-Prompts ──restringido───> Janela-de-Contexto
 Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
 Guardrails ─────────────restringe─────> Agente-de-IA, Tool-Calling
+Memória-de-Agentes ────depende───────> Agente-de-IA, Janela-de-Contexto
 ```
 
 ## Como adicionar uma nota nova

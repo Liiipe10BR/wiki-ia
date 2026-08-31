@@ -31,9 +31,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 21 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails) |
+| Notas de conceito ativas | 22 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails, Memória-de-Agentes) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 18 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15, #17, #14 e #12) + Replit (9ª) |
+| Contribuições de IA | 19 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15, #17, #14, #12 e #25) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | 1 — ligação bidirecional Agente-de-IA ↔ Sistemas-Multiagente; schema OTel GenAI ainda Development (ver Observabilidade-de-IA); rotulagem OWASP 2025 vs 2026 (ver Guardrails/Fontes) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
@@ -45,8 +45,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - **Data:** 2026-08-30
 - **Problema:** `Conceitos/Agente-de-IA.md` menciona "multi-agente" como variação de loop (narrativa) e não inclui `[[Sistemas-Multiagente]]` nas relações YAML nem em "Notas Relacionadas". Já `Sistemas-Multiagente` declara `depends_on: [[Agente-de-IA]]` e lista o link. A hiperligação de volta está ausente.
 - **Impacto:** Baixo (conceito é mencionado; falta só o `[[wiki]]` e a entrada no grafo da nota antiga).
-- **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas". Pode ser issue de follow-up após o merge do PR #18 — **não bloqueia** o merge da nota nova.
-- **Issue para resolver:** a abrir por quem pegar o follow-up (não criada automaticamente neste PR).
+- **Resolução sugerida:** Em `Agente-de-IA.md`, trocar a menção textual "multi-agente" por `[[Sistemas-Multiagente]]` (ou acrescentar o link ao lado), adicionar `related_to: [[Sistemas-Multiagente]]` no YAML e a linha correspondente em "Notas Relacionadas".
+- **Issue para resolver:** [#30](https://github.com/Liiipe10BR/wiki-ia/issues/30) (follow-up ligação bidirecional).
 
 ### Schema OTel GenAI (Observabilidade)
 - **Registrado em:** Issue #14 / PR #20 (`Observabilidade-de-IA`)
@@ -55,6 +55,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #25. Criou `Conceitos/Memoria-de-Agentes.md` (hierarquia in-context/recall/archival; loop write–manage–read; distinção vs RAG; multiagente, observabilidade e guardrails) e `Fontes/Memoria-de-Agentes.md` (MemGPT arXiv:2310.08560, Letta docs, surveys arXiv:2603.07670 e arXiv:2602.06052). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
 - **2026-08-30** — Grok (xAI), Issue #12 / PR #19. Criou `Conceitos/Guardrails.md` (input/output/tool; preventivo vs. detectivo; HITL; limites de custo e autonomia; relação com Agente-de-IA, Tool-Calling, MCP, Alucinação, RAG e Prompt-Injection) e `Fontes/Guardrails.md` (OpenAI Agents SDK, Llama Guard arXiv:2312.06674, OWASP LLM Top 10 2025/2026, NIST AI 600-1, Microsoft Foundry). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Branch sincronizada com `main` (incl. PRs #20 e #21) via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Divergência de rotulagem OWASP 2025 vs 2026 registrada nas fontes.
 - **2026-08-30** — Grok (xAI), Issue #14 / PR #20. Criou `Conceitos/Observabilidade-de-IA.md` (traces de prompts/modelo/tokens/latência/custo, retrieval, tools, erros, avaliação e privacidade) e `Fontes/Observabilidade-de-IA.md` (OTel GenAI semantic conventions, OpenInference + redaction, OWASP LLM02:2025). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. Branch sincronizada com `main` (incl. PR #21) via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Divergência de schema OTel (Development) registrada acima.
 - **2026-08-30** — Grok (xAI), Issue #17 / PR #21. Criou `Conceitos/Engenharia-de-Prompts.md` (papéis system/user/contexto, few-shot, CoT, decomposição, saída estruturada, critérios de sucesso, separação instrução/dado; relação com Tool-Calling, RAG e Janela-de-Contexto; prompt não substitui avaliação nem segurança) e `Fontes/Engenharia-de-Prompts.md` (The Prompt Report arXiv:2406.06608; GPT-3 arXiv:2005.14165; CoT arXiv:2201.11903; Least-to-Most arXiv:2205.10625; Lost in the Middle arXiv:2307.03172). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. Branch sincronizada com `main` via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Nenhuma divergência de fato.
@@ -208,7 +209,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
-  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA e Guardrails em 2026-08-30).
+  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails e Memória-de-Agentes em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -226,7 +227,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~Engenharia de prompts (Issue #17)~~ — resolvido em 2026-08-30 (`Engenharia-de-Prompts.md`, PR #21).
 - [x] ~~Observabilidade (Issue #14)~~ — resolvido em 2026-08-30 (`Observabilidade-de-IA.md`, PR #20).
 - [x] ~~Guardrails (Issue #12)~~ — resolvido em 2026-08-30 (`Guardrails.md`, PR #19).
-- [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (divergência registrada acima; impacto baixo).
+- [x] ~~Memória de agentes (Issue #25)~~ — resolvido em 2026-08-30 (`Memoria-de-Agentes.md`).
+- [ ] **Follow-up:** ligação bidirecional em `Agente-de-IA.md` → `[[Sistemas-Multiagente]]` (Issue #30; impacto baixo).
 
 ## Regra de manutenção deste arquivo
 
