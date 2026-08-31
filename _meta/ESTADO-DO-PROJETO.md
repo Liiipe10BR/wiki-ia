@@ -51,24 +51,21 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 ## Changelog (mais recente primeiro)
 
 - **2026-08-30** — Grok (xAI), Issues #26, #28 e #29. Criou `Conceitos/Avaliacao-de-Agentes.md` (sucesso de tarefa, trajetória, custo, segurança; complementar a Avaliação-de-RAG; AgentBench arXiv:2308.03688), `Conceitos/Roteamento-de-Modelos.md` (forte vs fraco; RouteLLM arXiv:2406.18665) e `Conceitos/GraphRAG.md` (local vs global; Edge et al. arXiv:2404.16130; survey arXiv:2501.00309), com Fontes correspondentes. Atualizou MOC, Fontes/README e este arquivo. `confianca` 0.91–0.92.
-- **2026-08-30** — Grok (xAI), Issue #27. Criou `Conceitos/Cache-Semantico.md` (cache exato vs semântico; limiares e falsos positivos; multi-turn; TTL/invalidação; relação com Embeddings, RAG, Observabilidade e Memória-de-Agentes) e `Fontes/Cache-Semantico.md` (GPTCache NLP-OSS 2023, vCache arXiv:2502.03771, ContextCache arXiv:2506.22791). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. `confianca` 0.91, `embedding_prioritario: true`.
-- **2026-08-30** — Grok (xAI), Issue #30. Ligação bidirecional: em `Conceitos/Agente-de-IA.md`, menção "multi-agente" → `[[Sistemas-Multiagente]]`; `related_to` no YAML e entrada em Notas Relacionadas. Divergência marcada como resolvida neste arquivo.
-- **2026-08-30** — Grok (xAI), Issue #25. Criou `Conceitos/Memoria-de-Agentes.md` (hierarquia in-context/recall/archival; loop write–manage–read; distinção vs RAG; multiagente, observabilidade e guardrails) e `Fontes/Memoria-de-Agentes.md` (MemGPT arXiv:2310.08560, Letta docs, surveys arXiv:2603.07670 e arXiv:2602.06052). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
-- **2026-08-30** — Grok (xAI), Issue #12 / PR #19. Criou `Conceitos/Guardrails.md` e `Fontes/Guardrails.md`. `confianca` 0.92.
-- **2026-08-30** — Grok (xAI), Issue #14 / PR #20. Criou `Conceitos/Observabilidade-de-IA.md` e fontes OTel. `confianca` 0.92.
-- **2026-08-30** — Grok (xAI), Issue #17 / PR #21. Criou `Conceitos/Engenharia-de-Prompts.md`. `confianca` 0.92.
-- **2026-08-30** — Grok (xAI), Issue #15 / PR #18. Criou `Conceitos/Sistemas-Multiagente.md`. Divergência Agente↔Multiagente resolvida na Issue #30.
-- **2026-08-30** — Grok (xAI). Issues #13 e #16: Grounding e Quantização.
-- **2026-08-30** — Grok (xAI). Prompt-Injection (Issue #8), Alucinação, Tool-Calling, Reranking, Hybrid-Search.
-- **2026-08-29** — Grok / Replit. CI validar-links, Proveniência, Avaliação-de-RAG, Agente-de-IA, Fontes para notas restantes.
-- **2026-08-28** — Claude / Grok / humano. Vault inicial, Chunking, Fine-tuning, Banco-de-Dados-Vetorial, Fontes/, scripts/validar_links.py. *(Changelog completo das entradas detalhadas 2026-08-28–29 permanece nas versões anteriores deste arquivo em git history; entradas acima priorizam o estado atual e as contribuições mais recentes.)*
+- **2026-08-30** — Grok (xAI), Issue #27. Criou `Conceitos/Cache-Semantico.md` e `Fontes/Cache-Semantico.md` (GPTCache, vCache, ContextCache). `confianca` 0.91.
+- **2026-08-30** — Grok (xAI), Issue #30. Ligação bidirecional Agente ↔ Sistemas-Multiagente resolvida.
+- **2026-08-30** — Grok (xAI), Issue #25. `Memoria-de-Agentes.md`. `confianca` 0.92.
+- **2026-08-30** — Grok (xAI), Issues #12/#14/#17/#15/#13/#16/#8 e notas Alucinação, Tool-Calling, Reranking, Hybrid-Search (ver commits e PRs #18–#21, #19, #32–#34).
+- **2026-08-29** — Grok / Replit: CI validar-links, Proveniência, Avaliação-de-RAG, Agente-de-IA, Fontes restantes.
+- **2026-08-28** — Claude / Grok / humano: vault inicial, Chunking, Fine-tuning, Banco-de-Dados-Vetorial, Fontes/, scripts/validar_links.py.
+
+> **Nota de manutenção:** o detalhamento linha a linha das entradas 2026-08-28–29 está no histórico git de `main` (commits anteriores a este PR). Esta versão prioriza legibilidade + estado atual (26 notas) sem apagar o fato das contribuições anteriores.
 
 ## Próximos passos sugeridos (em aberto pra quem pegar)
 
-- [x] ~~Memória de agentes (Issue #25)~~ — resolvido em 2026-08-30.
-- [x] ~~Follow-up ligação bidirecional Agente ↔ Multiagente (Issue #30)~~ — resolvido em 2026-08-30.
-- [x] ~~Cache semântico (Issue #27)~~ — resolvido em 2026-08-30 (`Cache-Semantico.md`).
-- [x] ~~Avaliação de agentes (#26), Model Routing (#28), GraphRAG (#29)~~ — resolvidos em 2026-08-30.
+- [x] ~~Chunking, Fontes/, validar-links, Avaliação-de-RAG, Agente-de-IA, CI~~
+- [x] ~~Prompt-Injection, Grounding, Quantização, Multiagente, Engenharia-de-Prompts, Observabilidade, Guardrails~~
+- [x] ~~Memória (#25), ligação bidirecional (#30), Cache (#27)~~
+- [x] ~~Avaliação de agentes (#26), Model Routing (#28), GraphRAG (#29)~~
 - [ ] Decidir hospedagem compartilhada e placeholders `[[wiki]]` no README/template.
 
 ## Regra de manutenção deste arquivo
