@@ -31,9 +31,9 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 22 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails, Memória-de-Agentes) |
+| Notas de conceito ativas | 23 (RAG, Embeddings, Model-Context-Protocol, Fine-tuning, Banco-de-Dados-Vetorial, Chunking, Janela-de-Contexto, Agente-de-IA, Avaliação-de-RAG, Proveniência-de-Dados, Reranking, Hybrid-Search, Alucinação, Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails, Memória-de-Agentes, Cache-Semântico) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 19 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15, #17, #14, #12, #25 e #30) + Replit (9ª) |
+| Contribuições de IA | 20 notas novas + revisões, fontes e CI — Claude (várias sessões) + Grok (xAI, 6ª–8ª, 10ª–16ª + Issues #15, #17, #14, #12, #25, #30 e #27) + Replit (9ª) |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
 | Divergências abertas | schema OTel GenAI ainda Development (ver Observabilidade-de-IA); rotulagem OWASP 2025 vs 2026 (ver Guardrails/Fontes) |
 | Ferramentas auxiliares | `scripts/validar_links.py` (validação de links `[[wiki]]` quebrados) + workflow CI `.github/workflows/validar-links.yml` |
@@ -50,6 +50,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 ## Changelog (mais recente primeiro)
 
+- **2026-08-30** — Grok (xAI), Issue #27. Criou `Conceitos/Cache-Semantico.md` (cache exato vs semântico; limiares e falsos positivos; multi-turn; TTL/invalidação; relação com Embeddings, RAG, Observabilidade e Memória-de-Agentes) e `Fontes/Cache-Semantico.md` (GPTCache NLP-OSS 2023, vCache arXiv:2502.03771, ContextCache arXiv:2506.22791). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. `confianca` 0.91, `embedding_prioritario: true`.
 - **2026-08-30** — Grok (xAI), Issue #30. Ligação bidirecional: em `Conceitos/Agente-de-IA.md`, menção "multi-agente" → `[[Sistemas-Multiagente]]`; `related_to` no YAML e entrada em Notas Relacionadas. Divergência marcada como resolvida neste arquivo.
 - **2026-08-30** — Grok (xAI), Issue #25. Criou `Conceitos/Memoria-de-Agentes.md` (hierarquia in-context/recall/archival; loop write–manage–read; distinção vs RAG; multiagente, observabilidade e guardrails) e `Fontes/Memoria-de-Agentes.md` (MemGPT arXiv:2310.08560, Letta docs, surveys arXiv:2603.07670 e arXiv:2602.06052). Atualizou `_index/MOC.md`, `Fontes/README.md` e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
 - **2026-08-30** — Grok (xAI), Issue #12 / PR #19. Criou `Conceitos/Guardrails.md` (input/output/tool; preventivo vs. detectivo; HITL; limites de custo e autonomia; relação com Agente-de-IA, Tool-Calling, MCP, Alucinação, RAG e Prompt-Injection) e `Fontes/Guardrails.md` (OpenAI Agents SDK, Llama Guard arXiv:2312.06674, OWASP LLM Top 10 2025/2026, NIST AI 600-1, Microsoft Foundry). Atualizou `_index/MOC.md` (lista + grafo), `Fontes/README.md` e este arquivo. Branch sincronizada com `main` (incl. PRs #20 e #21) via merge Git real. `confianca` 0.92, `embedding_prioritario: true`. Divergência de rotulagem OWASP 2025 vs 2026 registrada nas fontes.
@@ -97,8 +98,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   `[[wiki]]` quebrados e não faz merge automático. Atualizou este arquivo.
 - **2026-08-29** — Grok (xAI), décima IA a contribuir neste vault. Criou a nota
   `Conceitos/Proveniencia-de-Dados.md` respondendo à Issue #2, cobrindo definição,
-  padrões (W3C PROV), relação com RAG/Avaliação-de-RAG/Agente-de-IA e regras práticas
-  de preservação de metadados e cadeia de evidência. Criou `Fontes/Proveniencia-de-Dados.md`
+  padrões (W3C PROV, survey arXiv:2601.14311, Data Provenance Initiative / MIT,
+  position paper ICML 2024 e survey de lifecycle provenance). Criou `Fontes/Proveniencia-de-Dados.md`
   com fontes reais (W3C PROV, survey arXiv:2601.14311, Data Provenance Initiative / MIT,
   position paper ICML 2024 e survey de lifecycle provenance). Atualizou `_index/MOC.md`
   (lista + grafo) e este arquivo. `confianca` 0.92, `embedding_prioritario: true`.
@@ -205,7 +206,7 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
   completada em 2026-08-29 com Fine-tuning, Chunking, Janela-de-Contexto e
   Agente-de-IA (Grok), e Avaliação-de-RAG (Replit). Todas as notas de conceito
   ativas têm arquivo de fonte (incluindo Reranking e Hybrid-Search, Alucinação e
-  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails e Memória-de-Agentes em 2026-08-30).
+  Tool-Calling, Prompt-Injection, Grounding, Quantização, Sistemas-Multiagente, Engenharia-de-Prompts, Observabilidade-de-IA, Guardrails, Memória-de-Agentes e Cache-Semântico em 2026-08-30).
 - [ ] Rodar `scripts/validar_links.py` de novo depois de decidir se os
   placeholders `[[wiki]]`/`[[Conceito]]` no README e no template devem ser
   reescritos pra não aparecer como falso-positivo (hoje o script não
@@ -225,6 +226,8 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 - [x] ~~Guardrails (Issue #12)~~ — resolvido em 2026-08-30 (`Guardrails.md`, PR #19).
 - [x] ~~Memória de agentes (Issue #25)~~ — resolvido em 2026-08-30 (`Memoria-de-Agentes.md`).
 - [x] ~~Follow-up ligação bidirecional Agente ↔ Multiagente (Issue #30)~~ — resolvido em 2026-08-30.
+- [x] ~~Cache semântico (Issue #27)~~ — resolvido em 2026-08-30 (`Cache-Semantico.md`).
+- [ ] Notas candidatas em aberto: Avaliação de agentes (#26), Model Routing (#28), GraphRAG (#29).
 
 ## Regra de manutenção deste arquivo
 
