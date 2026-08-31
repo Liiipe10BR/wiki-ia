@@ -42,6 +42,12 @@ embedding_prioritario: false
 - [[Avaliacao-de-Agentes|Avaliação de Agentes]] — relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]], [[Guardrails]], [[Observabilidade-de-IA]] *(Issue #26)*
 - [[Roteamento-de-Modelos|Roteamento de Modelos]] — relacionado a → [[Agente-de-IA]], [[Observabilidade-de-IA]], [[Guardrails]], [[Cache-Semantico]] *(Issue #28)*
 - [[GraphRAG]] — depende de → [[RAG]]; relacionado a → [[Hybrid-Search]], [[Reranking]], [[Embeddings]], [[Proveniencia-de-Dados]] *(Issue #29)*
+- [[HITL|Human-in-the-Loop]] — relacionado a → [[Guardrails]], [[Agente-de-IA]], [[Tool-Calling]], [[Observabilidade-de-IA]] *(Issue #36)*
+- [[Compressao-de-Contexto|Compressão de Contexto]] — relacionado a → [[Janela-de-Contexto]], [[RAG]], [[Reranking]], [[Memoria-de-Agentes]] *(Issue #37)*
+- [[Saida-Estruturada|Saída Estruturada]] — relacionado a → [[Tool-Calling]], [[Engenharia-de-Prompts]], [[Guardrails]] *(Issue #38)*
+- [[RAG-Multimodal|RAG Multimodal]] — depende de → [[RAG]]; relacionado a → [[Embeddings]], [[Grounding]] *(Issue #39)*
+- [[Red-Teaming]] — relacionado a → [[Guardrails]], [[Prompt-Injection]], [[Avaliacao-de-Agentes]] *(Issue #40)*
+- [[Reflexion]] — depende de → [[Agente-de-IA]]; relacionado a → [[Memoria-de-Agentes]], [[Avaliacao-de-Agentes]] *(Issue #41)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -74,6 +80,12 @@ Cache-Semântico ────────depende───────> Embedding
 Avaliação-de-Agentes ──relacionado───> Avaliação-de-RAG, Agente-de-IA
 Roteamento-de-Modelos ─seleciona─────> (LLMs por custo/qualidade)
 GraphRAG ───────────────estende──────> RAG
+HITL ───────────────────controla─────> Agente-de-IA, Tool-Calling
+Compressão-de-Contexto ─reduz────────> tokens / Janela-de-Contexto
+Saída-Estruturada ──────restringe────> geração (schema)
+RAG-Multimodal ─────────estende──────> RAG
+Red-Teaming ────────────avalia───────> segurança / abuso
+Reflexion ──────────────refina───────> trajetória do agente
 ```
 
 ## Como adicionar uma nota nova
