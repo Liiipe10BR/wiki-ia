@@ -39,6 +39,9 @@ embedding_prioritario: false
 - [[Guardrails]] — restringe → [[Agente-de-IA]], [[Tool-Calling]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[RAG]], [[Prompt-Injection]] *(Issue #12, PR #19)*
 - [[Memoria-de-Agentes|Memória de Agentes]] — depende de → [[Agente-de-IA]], [[Janela-de-Contexto]]; relacionado a → [[RAG]], [[Tool-Calling]], [[Sistemas-Multiagente]], [[Observabilidade-de-IA]], [[Guardrails]] *(Issue #25)*
 - [[Cache-Semantico|Cache Semântico]] — depende de → [[Embeddings]]; relacionado a → [[Banco-de-Dados-Vetorial]], [[RAG]], [[Janela-de-Contexto]], [[Observabilidade-de-IA]], [[Memoria-de-Agentes]] *(Issue #27)*
+- [[Avaliacao-de-Agentes|Avaliação de Agentes]] — relacionado a → [[Avaliacao-de-RAG]], [[Agente-de-IA]], [[Tool-Calling]], [[Guardrails]], [[Observabilidade-de-IA]] *(Issue #26)*
+- [[Roteamento-de-Modelos|Roteamento de Modelos]] — relacionado a → [[Agente-de-IA]], [[Observabilidade-de-IA]], [[Guardrails]], [[Cache-Semantico]] *(Issue #28)*
+- [[GraphRAG]] — depende de → [[RAG]]; relacionado a → [[Hybrid-Search]], [[Reranking]], [[Embeddings]], [[Proveniencia-de-Dados]] *(Issue #29)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -68,6 +71,9 @@ Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Cal
 Guardrails ─────────────restringe─────> Agente-de-IA, Tool-Calling
 Memória-de-Agentes ────depende───────> Agente-de-IA, Janela-de-Contexto
 Cache-Semântico ────────depende───────> Embeddings
+Avaliação-de-Agentes ──relacionado───> Avaliação-de-RAG, Agente-de-IA
+Roteamento-de-Modelos ─seleciona─────> (LLMs por custo/qualidade)
+GraphRAG ───────────────estende──────> RAG
 ```
 
 ## Como adicionar uma nota nova
