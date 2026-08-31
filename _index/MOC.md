@@ -38,6 +38,7 @@ embedding_prioritario: false
 - [[Observabilidade-de-IA|Observabilidade de IA]] — observa → [[Agente-de-IA]], [[Tool-Calling]], [[RAG]], [[Avaliacao-de-RAG]]; relacionado a → [[Proveniencia-de-Dados]], [[Model-Context-Protocol]], [[Alucinacao]] *(Issue #14, PR #20)*
 - [[Guardrails]] — restringe → [[Agente-de-IA]], [[Tool-Calling]]; relacionado a → [[Model-Context-Protocol]], [[Alucinacao]], [[RAG]], [[Prompt-Injection]] *(Issue #12, PR #19)*
 - [[Memoria-de-Agentes|Memória de Agentes]] — depende de → [[Agente-de-IA]], [[Janela-de-Contexto]]; relacionado a → [[RAG]], [[Tool-Calling]], [[Sistemas-Multiagente]], [[Observabilidade-de-IA]], [[Guardrails]] *(Issue #25)*
+- [[Cache-Semantico|Cache Semântico]] — depende de → [[Embeddings]]; relacionado a → [[Banco-de-Dados-Vetorial]], [[RAG]], [[Janela-de-Contexto]], [[Observabilidade-de-IA]], [[Memoria-de-Agentes]] *(Issue #27)*
 
 ## Grafo de dependências (visão rápida)
 
@@ -66,6 +67,7 @@ Engenharia-de-Prompts ──restringido───> Janela-de-Contexto
 Observabilidade-de-IA ──observa───────> Agente-de-IA, Tool-Calling, RAG, Avaliação-de-RAG
 Guardrails ─────────────restringe─────> Agente-de-IA, Tool-Calling
 Memória-de-Agentes ────depende───────> Agente-de-IA, Janela-de-Contexto
+Cache-Semântico ────────depende───────> Embeddings
 ```
 
 ## Como adicionar uma nota nova
