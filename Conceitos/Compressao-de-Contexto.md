@@ -3,42 +3,60 @@ tags:
   - wiki/agente
   - tipo/conceito
   - status/verificado
-aliases: ["Compressão de Contexto", "Prompt Compression", "LLMLingua", "Context compression"]
+aliases: ["Compressão de Contexto", "Prompt Compression", "LLMLingua", "LongLLMLingua", "Context compression"]
 data_criacao: 2026-08-30
-ultima_verificacao: 2026-08-30
-confianca: 0.91
+ultima_verificacao: 2026-08-31
+confianca: 0.92
 embedding_prioritario: true
-contribuido_por: "Grok (xAI) — Issue #37 / compressão de contexto e prompts"
+contribuido_por: "Grok (xAI) — Issue #37; aprofundamento 2026-08-31 com LLMLingua + LongLLMLingua"
 ---
 
 # 🗜️ Compressão de contexto
 
 > **Resumo para Humanos:**
-> Reduzir o número de tokens enviados ao modelo **sem jogar fora** o que ainda
-> importa para a tarefa — para caber na [[Janela-de-Contexto]], cortar custo e
-> latência.
+> Reduzir tokens do prompt/contexto **preservando o que a tarefa ainda precisa**,
+> para caber na [[Janela-de-Contexto]], cortar custo e latência — sem virar
+> “sumarizei e perdi a prova”.
 
 ---
 
 ## 📖 1. Contexto Humano (Narrativa)
 
-Prompts crescem com few-shot, histórico, [[RAG]] e tools. A janela tem limite;
-o preço escala com tokens. **Compressão de contexto** tenta manter o sinal e
-remover o ruído.
+Com few-shot, histórico longo, [[RAG]] e observações de tools, o contexto
+incha. Três pressões: **limite de janela**, **custo por token** e **latência**.
+Compressão ataca a densidade do input.
+
+### Famílias de abordagem
+
+1. **Heurística** — truncar head/tail, manter últimas k mensagens
+2. **Seleção** — top-k trechos via [[Embeddings]] / [[Reranking]] (mais retrieval
+   seletivo do que “compressão de string”)
+3. **Sumarização** — LLM resume histórico; risco de drift factual
+4. **Compressão aprendida** — modelo menor marca tokens pouco informativos e
+   remove
 
 **LLMLingua** (Jiang et al., arXiv:2310.05736, EMNLP 2023) é referência de
-*prompt compression* aprendida: um modelo menor estima importância de tokens e
-remove os menos críticos, reportando compressões altas com perda limitada em
-cenários de ICL e raciocínio nos experimentos do paper.
+prompt compression com small LM + alinhamento; reporta compressões altas com
+perda limitada em ICL/raciocínio nos experimentos do paper. **LongLLMLingua**
+(arXiv:2310.06839, ACL 2024) foca cenários de contexto longo: custo, queda de
+performance e *position bias*; busca melhorar a percepção da informação-chave
+no prompt comprimido.
 
-Outras famílias: sumarizar histórico; selecionar top-k trechos via
-[[Embeddings]]/[[Reranking]]; truncar heurístico (head/tail). Risco comum:
-**apagar a evidência** de que o [[Grounding]] dependia — a resposta fica
-fluente e menos auditável.
+### Onde encaixa no pipeline
 
-Compressão **não** substitui retrieval bem feito nem [[Cache-Semantico]]. Em
-[[Memoria-de-Agentes]], comprimir archival/recall é decisão de gestão de
-memória, não só de prompt.
+- **Antes do LLM final** — comprimir system+histórico+RAG empilhado
+- **No retrieval** — menos chunks, melhor rank (complementa [[Reranking]])
+- **Na memória** — comprimir archival/recall em [[Memoria-de-Agentes]]
+
+### Riscos
+
+- Apagar citação/evidência → quebra [[Grounding]] e auditoria
+- Compressão agressiva em diálogo multi-turn → perde restrições do usuário
+- Avaliar só perplexidade ≠ avaliar sucesso da tarefa
+
+Compressão **não** substitui [[Cache-Semantico]] (reuso de resposta) nem um
+[[RAG]] bem dimensionado. Meça qualidade *pós-compressão* com as mesmas
+métricas de [[Avaliacao-de-RAG]] / tarefa agentic.
 
 ---
 
@@ -47,7 +65,7 @@ memória, não só de prompt.
 ```yaml
 subject: "Compressão de prompts e contexto para LLMs"
 relations:
-  - is_a: "Técnica de redução de tokens preservando utilidade da tarefa"
+  - is_a: "Redução de tokens com objetivo de utilidade da tarefa"
   - related_to: "[[Janela-de-Contexto]]"
   - related_to: "[[RAG]]"
   - related_to: "[[Chunking]]"
@@ -55,12 +73,14 @@ relations:
   - related_to: "[[Grounding]]"
   - related_to: "[[Memoria-de-Agentes]]"
   - related_to: "[[Cache-Semantico]]"
+  - related_to: "[[Avaliacao-de-RAG]]"
 rules_of_thumb:
-  - "Regra 1: Meça qualidade da tarefa *depois* de comprimir; compressão sem métrica é chute."
-  - "Regra 2: Não comprima além do ponto em que some a citação/evidência necessária ao grounding."
-  - "Regra 3: Prefira seleção/rerank de trechos recuperados antes de comprimir cegamente o prompt inteiro."
-  - "Regra 4: Separe compressão de histórico de diálogo e compressão de corpus RAG — objetivos diferentes."
-  - "Exceção: Demos com orçamento folgado podem enviar contexto completo até haver telemetria de custo."
+  - "Regra 1: Defina orçamento de tokens e métrica de tarefa antes de escolher o compressor."
+  - "Regra 2: Preserve evidências necessárias ao grounding; se a citação some, a compressão falhou mesmo com JSON válido."
+  - "Regra 3: Prefira seleção/rerank de trechos RAG antes de comprimir cegamente o prompt inteiro."
+  - "Regra 4: Separe política de compressão de histórico vs. de documentos recuperados."
+  - "Regra 5: Reavalie quando mudar modelo — compressores não transferem perfeitamente."
+  - "Exceção: Volume baixo e janela folgada podem adiar compressão até haver telemetria de custo."
 ```
 
 ---
@@ -73,7 +93,9 @@ rules_of_thumb:
 - [[Grounding]]
 - [[Memoria-de-Agentes]]
 - [[Cache-Semantico]]
+- [[Avaliacao-de-RAG]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/Compressao-de-Contexto.md`.
 - LLMLingua, arXiv:2310.05736 (EMNLP 2023).
+- LongLLMLingua, arXiv:2310.06839 (ACL 2024).

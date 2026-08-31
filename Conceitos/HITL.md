@@ -3,43 +3,74 @@ tags:
   - wiki/agente
   - tipo/conceito
   - status/verificado
-aliases: ["Human-in-the-Loop", "HITL", "Humano no loop", "Aprovação humana"]
+aliases: ["Human-in-the-Loop", "HITL", "Humano no loop", "Aprovação humana", "Human review"]
 data_criacao: 2026-08-30
-ultima_verificacao: 2026-08-30
-confianca: 0.90
+ultima_verificacao: 2026-08-31
+confianca: 0.92
 embedding_prioritario: true
-contribuido_por: "Grok (xAI) — Issue #36 / Human-in-the-Loop em sistemas agentic"
+contribuido_por: "Grok (xAI) — Issue #36; aprofundamento 2026-08-31 com docs oficiais de human review / needsApproval"
 ---
 
 # 👤 Human-in-the-Loop (HITL)
 
 > **Resumo para Humanos:**
-> Inserir **aprovação, correção ou tomada de controle humana** em pontos
-> críticos do pipeline de um [[Agente-de-IA]] — não só “o modelo pede ajuda”
-> no texto, mas uma interface real que bloqueia ou libera a ação.
+> Colocar um **humano no caminho crítico** do sistema — aprovar, rejeitar ou
+> corrigir ações sensíveis de um [[Agente-de-IA]] — com interface, política e
+> registro, não só com a frase “consulte um especialista” gerada pelo modelo.
 
 ---
 
 ## 📖 1. Contexto Humano (Narrativa)
 
-Agentes que chamam tools podem enviar e-mail, mover dinheiro ou apagar dados.
-[[Guardrails]] automáticos reduzem risco, mas não cobrem todos os casos de
-ambiguidade, responsabilidade legal ou preferência do negócio. **HITL** coloca
-um humano *no caminho crítico* (ou ao lado, em amostragem).
+Um agente que só gera texto raramente exige HITL formal. O risco sobe quando há
+[[Tool-Calling]] com efeito no mundo: cancelar pedido, transferir valor, enviar
+e-mail, alterar produção, invocar MCP com dados sensíveis. [[Guardrails]]
+automáticos (input/output/tool) bloqueiam padrões conhecidos; **HITL** cobre o
+que a política exige julgamento humano ou responsabilidade legal.
 
-Formas comuns:
+### O que é HITL de verdade
 
-1. **Pré-aprovação** — tool de alto risco só executa após OK humano
-2. **Pós-revisão** — ação executa; humano audita amostra ou exceções
-3. **Escalação** — confiança baixa, custo alto ou domínio sensível → fila humana
-4. **Correção** — humano edita a saída e o sistema aprende (ou só registra)
+HITL operacional tem três peças:
 
-Trade-off central: **segurança e accountability** vs. **latência e custo
-operacional**. Em produção, HITL sem [[Observabilidade-de-IA]] vira fila cega.
-HITL não substitui [[Avaliacao-de-Agentes]]; alimenta dados para ela.
+1. **Ponto de interrupção** — a execução **pausa** antes (ou depois) de uma ação
+2. **Canal humano** — UI, fila, ticket ou API onde alguém decide
+3. **Retomada** — o runtime **aprova ou rejeita** e continua (ou aborta) com
+   estado preservado
 
-Não confundir com o modelo *escrever* “consulte um especialista” sem haver
-canal de escalação. Sem UI, política e SLA, não há loop humano.
+Sem (2) e (3), “o modelo pediu ajuda” é só texto.
+
+### Padrões de inserção no pipeline
+
+| Padrão | Quando | Custo típico |
+|--------|--------|----------------|
+| **Pré-aprovação** | Ação irreversível / financeira / PII / produção | Alta latência; alto controle |
+| **Pós-revisão** | Volume alto; amostragem ou só exceções | Menor latência; risco residual |
+| **Escalação condicional** | Confiança baixa, valor alto, domínio sensível | Depende da taxa de escalação |
+| **Correção com feedback** | Humano edita saída; sistema registra | Útil para [[Avaliacao-de-Agentes]] |
+
+Documentação de productização (ex.: OpenAI Agents SDK) formaliza **tool
+approval**: tools com `needsApproval` interrompem o run; a aplicação chama
+aprovar/rejeitar e retoma o estado. Guardrails automáticos e human review são
+apresentados como controles **complementares**, não substitutos.
+
+### O que medir
+
+- Taxa de interrupção e tempo até decisão (SLA)
+- Aprovações vs rejeições por tipo de tool
+- Falsos positivos (humano bloqueia o correto) e falsos negativos (aprovou o
+  errado)
+- Timeout: **silêncio ≠ aprovação** — defina fallback explícito
+
+[[Observabilidade-de-IA]] deve registrar *quem* decidiu, *sobre qual*
+interruption e o payload da tool. Sem isso não há auditoria nem melhoria de
+política.
+
+### Limites
+
+HITL não elimina [[Prompt-Injection]] nem substitui least privilege em tools.
+Em [[Sistemas-Multiagente]], defina se a aprovação é por agente ou pelo
+resultado agregado do time. HITL em excesso mata a automação; em falta, o
+sistema age sem accountability.
 
 ---
 
@@ -48,20 +79,22 @@ canal de escalação. Sem UI, política e SLA, não há loop humano.
 ```yaml
 subject: "Human-in-the-Loop em pipelines de agentes e LLMs"
 relations:
-  - is_a: "Padrão de controle humano em sistemas semi-autônomos"
+  - is_a: "Padrão de controle humano com pausa, decisão e retomada"
   - related_to: "[[Guardrails]]"
   - related_to: "[[Agente-de-IA]]"
   - related_to: "[[Tool-Calling]]"
   - related_to: "[[Observabilidade-de-IA]]"
   - related_to: "[[Avaliacao-de-Agentes]]"
   - related_to: "[[Prompt-Injection]]"
+  - related_to: "[[Sistemas-Multiagente]]"
+  - related_to: "[[Red-Teaming]]"
 rules_of_thumb:
-  - "Regra 1: Liste tools/ações que exigem pré-aprovação humana por política (irreversível, financeiro, PII, produção)."
-  - "Regra 2: Defina SLA e fallback se o humano não responder (timeout ≠ aprovação implícita)."
-  - "Regra 3: Registre quem aprovou, o quê e por quê — sem isso não há auditoria."
-  - "Regra 4: Use pós-revisão amostral para volume alto; pré-aprovação para risco alto."
-  - "Regra 5: HITL não é desculpa para omitir guardrails automáticos."
-  - "Exceção: Ambientes só de pesquisa/demo podem operar sem HITL se não houver efeito no mundo real."
+  - "Regra 1: Classifique tools por risco (irreversível, financeiro, PII, produção) e marque pré-aprovação por política, não por feeling do modelo."
+  - "Regra 2: Timeout sem resposta humana nunca deve ser tratado como aprovação implícita."
+  - "Regra 3: Persista interruptions e decisões (ator, timestamp, tool, args) para auditoria e avaliação."
+  - "Regra 4: Combine guardrails automáticos (baratos, sempre ligados) com HITL (caros, seletivos)."
+  - "Regra 5: Meça fila e SLA; HITL sem capacidade humana vira deadlock."
+  - "Exceção: Ambientes só de pesquisa/demo sem efeito no mundo real podem operar sem HITL formal."
 ```
 
 ---
@@ -73,7 +106,10 @@ rules_of_thumb:
 - [[Observabilidade-de-IA]]
 - [[Avaliacao-de-Agentes]]
 - [[Prompt-Injection]]
+- [[Sistemas-Multiagente]]
+- [[Red-Teaming]]
 
 ## 📚 4. Fontes
 - Ver `Fontes/HITL.md`.
-- Conceito transversal em frameworks de agents e em [[Guardrails]] (aprovação de ações).
+- OpenAI Agents SDK — Human in the loop / needsApproval.
+- OpenAI API — Guardrails and human review.
