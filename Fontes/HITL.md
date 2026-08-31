@@ -1,8 +1,14 @@
 # Fontes — HITL
 
-## Contexto no vault
-- Usada para: enquadrar HITL como padrão de controle (pré-aprovação, pós-revisão, escalação), distinto de "o modelo sugere consultar humano" sem canal real.
-- Ligação: a nota de [[Guardrails]] já menciona HITL; esta nota isola o conceito.
+## [Human in the loop — OpenAI Agents SDK](https://openai.github.io/openai-agents-js/guides/human-in-the-loop)
+- Usada para: padrão `needsApproval` em tools; interrupção do run; approve/reject e retomada de estado; uso principal = aprovação de tool calls sensíveis.
+- Data de acesso: 2026-08-31
+- Confiabilidade: documentação oficial do SDK.
+
+## [Guardrails and human review — OpenAI API](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals)
+- Usada para: distinção entre guardrails automáticos e human review; quando pausar antes de side effects; fluxo interruption → approve/reject.
+- Data de acesso: 2026-08-31
+- Confiabilidade: documentação oficial da API.
 
 ## Observação de método
-Não há um único paper fundador de "HITL para LLM agents". A nota prioriza regras de desenho verificáveis em produção e evita inventar frameworks proprietários. Fontes de produto (ex.: filas de aprovação em SDKs de agents) devem ser citadas com URL oficial quando usadas em revisões futuras.
+HITL é padrão de desenho transversal; a nota usa docs de productização como âncora verificável, sem tratar um vendor como definição única do conceito.
