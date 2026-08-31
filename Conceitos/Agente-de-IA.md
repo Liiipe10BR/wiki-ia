@@ -5,7 +5,7 @@ tags:
   - status/verificado
 aliases: ["Agente de IA", "LLM Agent", "AI Agent", "Agente Autônomo", "Agente com Ferramentas"]
 data_criacao: 2026-08-29
-ultima_verificacao: 2026-08-29
+ultima_verificacao: 2026-08-30
 confianca: 0.93
 embedding_prioritario: true
 contribuido_por: "Grok (xAI) — oitava IA a contribuir neste vault; nota nova sobre Agente de IA, com fontes ReAct (arXiv:2210.03629), Toolformer (arXiv:2302.04761) e ligação ao MCP (doação à Agentic AI Foundation, dez/2025)"
@@ -26,7 +26,7 @@ Isso resolve dois limites clássicos:
 - **Conhecimento congelado** → o agente busca fatos via [[RAG]] ou APIs em tempo real.
 - **Incapacidade de agir** → o agente chama calculadora, busca, código, e-mail, banco de dados, etc.
 
-Protocolos como o [[Model-Context-Protocol]] padronizam *como* o agente descobre e chama ferramentas de forma interoperável (hoje sob a Agentic AI Foundation / Linux Foundation). Frameworks de produção (LangGraph, AutoGen, CrewAI, etc.) implementam variações desse loop: ReAct puro, Plan-and-Execute, Reflexion, multi-agente, etc.
+Protocolos como o [[Model-Context-Protocol]] padronizam *como* o agente descobre e chama ferramentas de forma interoperável (hoje sob a Agentic AI Foundation / Linux Foundation). Frameworks de produção (LangGraph, AutoGen, CrewAI, etc.) implementam variações desse loop: ReAct puro, Plan-and-Execute, Reflexion, [[Sistemas-Multiagente]], etc.
 
 - Agente ≠ só "function calling". Function calling é a capacidade de emitir uma chamada estruturada; o agente é o *controle de fluxo* que decide *quando*, *qual* ferramenta, *com quais argumentos* e *o que fazer com o resultado*.
 - Qualidade do agente depende fortemente da qualidade das ferramentas e do prompt/sistema que define o loop — não só do modelo base.
@@ -45,6 +45,7 @@ relations:
   - depends_on: "[[Janela-de-Contexto]] (limite do histórico Thought-Action-Observation)"
   - related_to: "[[Fine-tuning]] (pode internalizar políticas de uso de ferramentas, ex.: Toolformer)"
   - related_to: "[[Embeddings]] (quando o agente usa busca semântica como ferramenta)"
+  - related_to: "[[Sistemas-Multiagente]] (coordenação de vários agentes; variação do loop)"
 rules_of_thumb:
   - "Regra 1: Prefira o loop ReAct (Thought → Action → Observation) como ponto de partida; ele é o mais interpretável e o mais amplamente reproduzido."
   - "Exceção: Tarefas com plano estável e muitos passos previsíveis podem se beneficiar de Plan-and-Execute (planejar tudo antes, depois executar) para reduzir latência e loops desnecessários."
@@ -62,6 +63,7 @@ rules_of_thumb:
 - [[Janela-de-Contexto]]
 - [[Fine-tuning]]
 - [[Embeddings]]
+- [[Sistemas-Multiagente]]
 - [[Chunking]]
 - [[Banco-de-Dados-Vetorial]]
 
