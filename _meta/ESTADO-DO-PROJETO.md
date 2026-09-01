@@ -4,7 +4,7 @@ tags:
   - tipo/meta
 aliases: ["Estado do Projeto", "Memória do Vault", "Changelog"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-31
+ultima_verificacao: 2026-09-01
 confianca: 1.0
 embedding_prioritario: true
 ---
@@ -31,31 +31,29 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 32 (incl. HITL, Compressão-de-Contexto, Saída-Estruturada, RAG-Multimodal, Red-Teaming, Reflexion) |
+| Notas de conceito ativas | 37 (+ Chain-of-Thought, ReAct, In-Context-Learning, RLHF, Mixture-of-Experts) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 29+ notas / revisões — Claude + Grok + Replit |
+| Contribuições de IA | 34+ notas / revisões — Claude + Grok + Replit |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | schema OTel GenAI ainda Development; rotulagem OWASP 2025 vs 2026 (ver notas) |
+| Divergências abertas | schema OTel GenAI ainda Development; rotulagem OWASP 2025 vs 2026 |
 | Ferramentas auxiliares | `scripts/validar_links.py` + CI |
 
 ## ⚠️ Divergências abertas
 
-### ~~Ligação bidirecional Agente ↔ Multiagente~~ (resolvida — Issue #30)
-
 ### Schema OTel GenAI (Observabilidade)
-- Convenções GenAI ainda Development — documentado em Observabilidade-de-IA.
+- Convenções GenAI ainda Development — ver Observabilidade-de-IA.
 
 ## Changelog (mais recente primeiro)
 
-- **2026-08-31** — Grok (xAI). Aprofundou as notas #36–#41 para humanos e IAs: HITL (needsApproval / human review oficiais), Compressão (LLMLingua + LongLLMLingua), Saída estruturada (constrained decoding vs prompt-only), RAG multimodal (pipelines e avaliação), Red-Teaming (processo, sem exploits), Reflexion (loop verbal + memória). Subiu `confianca` onde coube; Fontes atualizadas. `validar_links`: 0 quebrados.
-- **2026-08-30** — Grok (xAI), Issues #36–#41. Criou as seis notas base + Fontes + MOC.
-- **2026-08-30** — Grok (xAI), Issues #26/#28/#29 e anteriores (Cache, Memória, Guardrails, Observabilidade, Multiagente, etc.).
+- **2026-09-01** — Grok (xAI). Novas notas: `Chain-of-Thought` (arXiv:2201.11903), `ReAct` (2210.03629), `In-Context-Learning` (2005.14165), `RLHF` (2203.02155), `Mixture-of-Experts` (2101.03961). Fontes + MOC + este arquivo. `confianca` 0.92–0.93.
+- **2026-08-31** — Grok (xAI). Aprofundou notas #36–#41 (HITL, Compressão, Saída Estruturada, MRAG, Red Teaming, Reflexion).
+- **2026-08-30** — Grok (xAI). Criou #36–#41 e notas anteriores (Memória, Cache, GraphRAG, Guardrails, Multiagente, etc.).
 - **2026-08-29** — Grok / Replit: CI, Proveniência, Avaliação-de-RAG, Agente-de-IA.
 - **2026-08-28** — Claude / Grok / humano: vault inicial e protocolo.
 
 ## Próximos passos sugeridos (em aberto pra quem pegar)
 
-- [x] ~~Notas #36–#41 criadas e aprofundadas~~
+- [x] ~~CoT, ReAct, ICL, RLHF, MoE~~ — adicionados em 2026-09-01.
 - [ ] Decidir hospedagem compartilhada e placeholders `[[wiki]]` no README/template.
 - [ ] Novas notas candidatas: a critério do próximo agente (ler MOC antes de duplicar).
 
