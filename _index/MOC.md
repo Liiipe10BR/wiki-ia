@@ -4,7 +4,7 @@ tags:
   - tipo/indice
 aliases: ["MOC", "Map of Content", "Índice"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-08-30
+ultima_verificacao: 2026-09-01
 confianca: 1.0
 embedding_prioritario: false
 ---
@@ -48,6 +48,11 @@ embedding_prioritario: false
 - [[RAG-Multimodal|RAG Multimodal]] — depende de → [[RAG]]; relacionado a → [[Embeddings]], [[Grounding]] *(Issue #39)*
 - [[Red-Teaming]] — relacionado a → [[Guardrails]], [[Prompt-Injection]], [[Avaliacao-de-Agentes]] *(Issue #40)*
 - [[Reflexion]] — depende de → [[Agente-de-IA]]; relacionado a → [[Memoria-de-Agentes]], [[Avaliacao-de-Agentes]] *(Issue #41)*
+- [[Chain-of-Thought]] — relacionado a → [[Engenharia-de-Prompts]], [[In-Context-Learning]], [[ReAct]]
+- [[ReAct]] — depende de → [[Agente-de-IA]]; relacionado a → [[Chain-of-Thought]], [[Tool-Calling]]
+- [[In-Context-Learning|In-Context Learning]] — relacionado a → [[Engenharia-de-Prompts]], [[Fine-tuning]], [[Chain-of-Thought]]
+- [[RLHF]] — relacionado a → [[Fine-tuning]], [[Guardrails]], [[Agente-de-IA]]
+- [[Mixture-of-Experts|Mixture-of-Experts (MoE)]] — relacionado a → [[Fine-tuning]], [[Quantizacao]], [[Roteamento-de-Modelos]]
 
 ## Grafo de dependências (visão rápida)
 
@@ -86,6 +91,11 @@ Saída-Estruturada ──────restringe────> geração (schema)
 RAG-Multimodal ─────────estende──────> RAG
 Red-Teaming ────────────avalia───────> segurança / abuso
 Reflexion ──────────────refina───────> trajetória do agente
+Chain-of-Thought ───────externaliza──> passos de raciocínio
+ReAct ──────────────────intercala────> Thought + Action + Observation
+In-Context-Learning ────adapta───────> tarefa via prompt (sem update de pesos)
+RLHF ───────────────────alinha───────> preferência humana (pós-treino)
+Mixture-of-Experts ─────roteia───────> experts (ativação esparsa)
 ```
 
 ## Como adicionar uma nota nova
