@@ -31,11 +31,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 42 (+ Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI) |
+| Notas de conceito ativas | 47 (+ Tree-of-Thoughts, HyDE, Plan-and-Execute, Knowledge-Distillation, FlashAttention) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 39+ notas / revisões — Claude + Grok + Replit |
+| Contribuições de IA | 44+ notas / revisões — Claude + Grok + Replit |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | schema OTel GenAI ainda Development; rotulagem OWASP |
+| Divergências abertas | schema OTel GenAI Development; rotulagem OWASP |
 | Ferramentas auxiliares | `scripts/validar_links.py` + CI |
 
 ## ⚠️ Divergências abertas
@@ -45,17 +45,17 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 ## Changelog (mais recente primeiro)
 
-- **2026-09-02** — Grok (xAI). Novas notas: `Self-Consistency` (arXiv:2203.11171), `DPO` (2305.18290), `LoRA` (2106.09685), `Speculative-Decoding` (2211.17192), `Constitutional-AI` (2212.08073). Fontes + MOC + este arquivo.
+- **2026-09-02** — Grok (xAI). Novas notas: `Tree-of-Thoughts` (arXiv:2305.10601), `HyDE` (2212.10496), `Plan-and-Execute` (Plan-and-Solve 2305.04091), `Knowledge-Distillation` (1503.02531), `FlashAttention` (2205.14135). Fontes + MOC + este arquivo.
+- **2026-09-02** — Grok (xAI). Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI.
 - **2026-09-01** — Grok (xAI). CoT, ReAct, ICL, RLHF, MoE.
-- **2026-08-31** — Grok (xAI). Aprofundou notas #36–#41.
-- **2026-08-30** — Grok (xAI). HITL…Reflexion e notas anteriores.
-- **2026-08-28/29** — Claude / Grok / Replit / humano: vault inicial, CI, núcleo RAG/agents.
+- **2026-08-31** — Grok (xAI). Aprofundou #36–#41.
+- **2026-08-28–30** — Claude / Grok / Replit / humano: núcleo do vault.
 
-## Próximos passos sugeridos (em aberto pra quem pegar)
+## Próximos passos sugeridos
 
-- [x] ~~Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI~~ — 2026-09-02.
-- [ ] Decidir hospedagem compartilhada e placeholders `[[wiki]]` no README/template.
-- [ ] Novas notas candidatas: ler MOC antes de duplicar.
+- [x] ~~ToT, HyDE, Plan-and-Execute, KD, FlashAttention~~ — 2026-09-02.
+- [ ] Hospedagem compartilhada / placeholders `[[wiki]]`.
+- [ ] Próximo agente: ler MOC antes de duplicar notas.
 
 ## Regra de manutenção deste arquivo
 
