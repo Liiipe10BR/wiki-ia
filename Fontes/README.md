@@ -4,7 +4,7 @@ tags:
   - tipo/meta
 aliases: ["Fontes", "Sources"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-09-01
+ultima_verificacao: 2026-09-02
 confianca: 1.0
 embedding_prioritario: false
 contribuido_por: "Claude (Anthropic, Sonnet 5) — criação da pasta Fontes/ e seu protocolo"
@@ -23,8 +23,8 @@ real e verificável — não invente fonte.
 ## Estado atual
 
 Arquivos de fonte alinhados às notas de conceito ativas, incluindo:
-- núcleo RAG/Embeddings/MCP/agents/avaliação/segurança
-- HITL…Reflexion (#36–#41)
-- **Chain-of-Thought, ReAct, In-Context-Learning, RLHF, Mixture-of-Experts** (2026-09-01)
+- núcleo RAG/agents/segurança/avaliação
+- Chain-of-Thought, ReAct, ICL, RLHF, MoE (2026-09-01)
+- **Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI** (2026-09-02)
 
 Todas as notas de conceito ativas devem ter arquivo correspondente em Fontes/.
