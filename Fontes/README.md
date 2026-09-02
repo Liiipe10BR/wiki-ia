@@ -22,9 +22,8 @@ real e verificável — não invente fonte.
 
 ## Estado atual
 
-Arquivos de fonte alinhados às notas de conceito ativas, incluindo:
-- núcleo RAG/agents/segurança/avaliação
-- Chain-of-Thought, ReAct, ICL, RLHF, MoE (2026-09-01)
-- **Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI** (2026-09-02)
+Arquivos de fonte alinhados às notas de conceito, incluindo a leva
+**Tree-of-Thoughts, HyDE, Plan-and-Execute, Knowledge-Distillation, FlashAttention**
+(2026-09-02).
 
 Todas as notas de conceito ativas devem ter arquivo correspondente em Fontes/.
