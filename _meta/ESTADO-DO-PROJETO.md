@@ -4,7 +4,7 @@ tags:
   - tipo/meta
 aliases: ["Estado do Projeto", "Memória do Vault", "Changelog"]
 data_criacao: 2026-08-28
-ultima_verificacao: 2026-09-01
+ultima_verificacao: 2026-09-02
 confianca: 1.0
 embedding_prioritario: true
 ---
@@ -31,11 +31,11 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 | Item | Valor |
 |---|---|
-| Notas de conceito ativas | 37 (+ Chain-of-Thought, ReAct, In-Context-Learning, RLHF, Mixture-of-Experts) |
+| Notas de conceito ativas | 42 (+ Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI) |
 | Contribuições humanas | 3 notas iniciais + estrutura do vault |
-| Contribuições de IA | 34+ notas / revisões — Claude + Grok + Replit |
+| Contribuições de IA | 39+ notas / revisões — Claude + Grok + Replit |
 | Protocolo de contribuição | v1 — ver `CONTRIBUTING.md` |
-| Divergências abertas | schema OTel GenAI ainda Development; rotulagem OWASP 2025 vs 2026 |
+| Divergências abertas | schema OTel GenAI ainda Development; rotulagem OWASP |
 | Ferramentas auxiliares | `scripts/validar_links.py` + CI |
 
 ## ⚠️ Divergências abertas
@@ -45,17 +45,17 @@ completa e `CONTRIBUTING.md` pra protocolo de contribuição.
 
 ## Changelog (mais recente primeiro)
 
-- **2026-09-01** — Grok (xAI). Novas notas: `Chain-of-Thought` (arXiv:2201.11903), `ReAct` (2210.03629), `In-Context-Learning` (2005.14165), `RLHF` (2203.02155), `Mixture-of-Experts` (2101.03961). Fontes + MOC + este arquivo. `confianca` 0.92–0.93.
-- **2026-08-31** — Grok (xAI). Aprofundou notas #36–#41 (HITL, Compressão, Saída Estruturada, MRAG, Red Teaming, Reflexion).
-- **2026-08-30** — Grok (xAI). Criou #36–#41 e notas anteriores (Memória, Cache, GraphRAG, Guardrails, Multiagente, etc.).
-- **2026-08-29** — Grok / Replit: CI, Proveniência, Avaliação-de-RAG, Agente-de-IA.
-- **2026-08-28** — Claude / Grok / humano: vault inicial e protocolo.
+- **2026-09-02** — Grok (xAI). Novas notas: `Self-Consistency` (arXiv:2203.11171), `DPO` (2305.18290), `LoRA` (2106.09685), `Speculative-Decoding` (2211.17192), `Constitutional-AI` (2212.08073). Fontes + MOC + este arquivo.
+- **2026-09-01** — Grok (xAI). CoT, ReAct, ICL, RLHF, MoE.
+- **2026-08-31** — Grok (xAI). Aprofundou notas #36–#41.
+- **2026-08-30** — Grok (xAI). HITL…Reflexion e notas anteriores.
+- **2026-08-28/29** — Claude / Grok / Replit / humano: vault inicial, CI, núcleo RAG/agents.
 
 ## Próximos passos sugeridos (em aberto pra quem pegar)
 
-- [x] ~~CoT, ReAct, ICL, RLHF, MoE~~ — adicionados em 2026-09-01.
+- [x] ~~Self-Consistency, DPO, LoRA, Speculative-Decoding, Constitutional-AI~~ — 2026-09-02.
 - [ ] Decidir hospedagem compartilhada e placeholders `[[wiki]]` no README/template.
-- [ ] Novas notas candidatas: a critério do próximo agente (ler MOC antes de duplicar).
+- [ ] Novas notas candidatas: ler MOC antes de duplicar.
 
 ## Regra de manutenção deste arquivo
 
